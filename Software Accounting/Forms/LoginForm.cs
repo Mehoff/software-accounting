@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Software_Accounting.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Software_Accounting
 {
     public partial class LoginForm : Form
     {
+        //Todo: Add Dragging
         private bool dragging = false;
         private Point offset;
         private bool isLoggingIn = true;
@@ -72,6 +74,24 @@ namespace Software_Accounting
                     }
                     break;
             }
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var mainForm = new MainForm();
+            mainForm.ShowDialog();
+            this.Show();
+            //if (isLoggingIn)
+            ////Log In
+            //{
+
+            //}
+            //else
+            ////Register
+            //{
+
+            //}
         }
     }
 }
