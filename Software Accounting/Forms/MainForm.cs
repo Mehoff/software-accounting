@@ -10,6 +10,8 @@ namespace Software_Accounting.Forms
 {
     public partial class MainForm : Form
     {
+        private bool mouseDown;
+        private Point lastLocation;
         public MainForm()
         {
             InitializeComponent();
@@ -25,6 +27,49 @@ namespace Software_Accounting.Forms
             
             if(result == DialogResult.Yes) 
                 Close();
+        }
+
+        private void textBoxFullname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBarPercent_Scroll(object sender, EventArgs e)
+        {
+            var value = trackBarPercent.Value;
+            if (value == 100)
+            {
+                labelPercent.Text = "Только готовые";
+            }
+            else if (value == 0) 
+            {
+                labelPercent.Text = "Только начатые";
+            }
+            else 
+            {
+                labelPercent.Text = $"От {value}%";
+            }
+        }
+
+        // Form Dragging
+        private void panelDragging_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+        private void panelDragging_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+        private void panelDragging_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
         }
     }
 }

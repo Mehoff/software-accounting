@@ -45,6 +45,7 @@ namespace Software_Accounting
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelDragging = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,9 +121,9 @@ namespace Software_Accounting
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonExit.Location = new System.Drawing.Point(510, 0);
+            this.buttonExit.Location = new System.Drawing.Point(503, 0);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(35, 35);
+            this.buttonExit.Size = new System.Drawing.Size(42, 35);
             this.buttonExit.TabIndex = 7;
             this.buttonExit.Text = "X";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -228,12 +229,24 @@ namespace Software_Accounting
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // panelDragging
+            // 
+            this.panelDragging.BackColor = System.Drawing.Color.Transparent;
+            this.panelDragging.Location = new System.Drawing.Point(-1, -1);
+            this.panelDragging.Name = "panelDragging";
+            this.panelDragging.Size = new System.Drawing.Size(858, 35);
+            this.panelDragging.TabIndex = 5;
+            this.panelDragging.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDragging_MouseDown);
+            this.panelDragging.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDragging_MouseMove);
+            this.panelDragging.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelDragging_MouseUp);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(897, 556);
+            this.Controls.Add(this.panelDragging);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -271,6 +284,7 @@ namespace Software_Accounting
         private System.Windows.Forms.Panel panelConfirm;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelDragging;
     }
 }
 

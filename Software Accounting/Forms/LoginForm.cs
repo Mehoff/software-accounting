@@ -14,8 +14,8 @@ namespace Software_Accounting
     public partial class LoginForm : Form
     {
         //Todo: Add Dragging
-        private bool dragging = false;
-        private Point offset;
+        private bool mouseDown;
+        private Point lastLocation;
         private bool isLoggingIn = true;
 
         public LoginForm()
@@ -92,6 +92,27 @@ namespace Software_Accounting
             //{
 
             //}
+        }
+        private void panelDragging_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panelDragging_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void panelDragging_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
         }
     }
 }
