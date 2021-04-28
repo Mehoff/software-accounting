@@ -12,11 +12,18 @@ namespace Software_Accounting
 {
     public partial class LoginForm : Form
     {
+        private bool dragging = false;
+        private Point offset;
+        private bool isLoggingIn = true;
+
         public LoginForm()
         {
             InitializeComponent();
         }
-
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
         private void buttonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -24,7 +31,47 @@ namespace Software_Accounting
 
         private void labelRegister_Click(object sender, EventArgs e)
         {
+            isLoggingIn = !isLoggingIn;
+            UpdateUI();
+        }
 
+        private void UpdateUI() 
+        {
+            switch (isLoggingIn)
+            {
+                case true: 
+                    {
+
+                        labelHeader.Focus();
+
+                        labelHeader.Text = "Вход";
+                        buttonLogin.Text = "Вход";
+                        labelRegister.Text = "Регистрация";
+
+                        textBoxConfirm.Visible = false;
+                        panelConfirm.Visible = false;
+
+                        textBoxFullname.Visible = false;
+                        panelFullname.Visible = false;
+                    }
+                break;
+                case false:
+                    {
+
+                        labelHeader.Focus();
+
+                        labelHeader.Text = "Регистрация";
+                        buttonLogin.Text = "Зарегистироваться";
+                        labelRegister.Text = "Войти";
+
+                        textBoxConfirm.Visible = true;
+                        panelConfirm.Visible = true;
+
+                        textBoxFullname.Visible = true;
+                        panelFullname.Visible = true;
+                    }
+                    break;
+            }
         }
     }
 }
