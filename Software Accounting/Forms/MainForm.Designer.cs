@@ -30,8 +30,14 @@ namespace Software_Accounting.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.circleButton1 = new Software_Accounting.Resources.Classes.CircleButton();
+            this.circleButton2 = new Software_Accounting.Resources.Classes.CircleButton();
+            this.circleButton3 = new Software_Accounting.Resources.Classes.CircleButton();
+            this.listBoxSoftware = new System.Windows.Forms.ListBox();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.circleButton4 = new Software_Accounting.Resources.Classes.CircleButton();
             this.buttonDownload = new Software_Accounting.Resources.Classes.CircularButton();
             this.label8 = new System.Windows.Forms.Label();
             this.labelFinishDate = new System.Windows.Forms.Label();
@@ -46,7 +52,6 @@ namespace Software_Accounting.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBarPercentage = new System.Windows.Forms.ProgressBar();
-            this.listBoxSoftware = new System.Windows.Forms.ListBox();
             this.textBoxFullname = new System.Windows.Forms.TextBox();
             this.panelFullname = new System.Windows.Forms.Panel();
             this.buttonSearch = new Software_Accounting.Resources.Classes.CircularButton();
@@ -61,25 +66,106 @@ namespace Software_Accounting.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.panelDragging = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPercent)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.listBoxSoftware);
             this.panel1.Location = new System.Drawing.Point(315, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(886, 701);
             this.panel1.TabIndex = 9;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.circleButton2);
+            this.groupBox2.Controls.Add(this.circleButton3);
+            this.groupBox2.Controls.Add(this.listBoxSoftware);
+            this.groupBox2.Location = new System.Drawing.Point(13, 35);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(407, 645);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Задачи";
+            // 
+            // circleButton1
+            // 
+            this.circleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.circleButton1.FlatAppearance.BorderSize = 0;
+            this.circleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton1.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButton1.ForeColor = System.Drawing.Color.White;
+            this.circleButton1.Location = new System.Drawing.Point(251, 387);
+            this.circleButton1.Name = "circleButton1";
+            this.circleButton1.Size = new System.Drawing.Size(50, 50);
+            this.circleButton1.TabIndex = 15;
+            this.circleButton1.Text = "Q";
+            this.circleButton1.UseVisualStyleBackColor = false;
+            // 
+            // circleButton2
+            // 
+            this.circleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButton2.BackColor = System.Drawing.Color.Purple;
+            this.circleButton2.FlatAppearance.BorderSize = 0;
+            this.circleButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton2.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButton2.ForeColor = System.Drawing.Color.White;
+            this.circleButton2.Location = new System.Drawing.Point(322, 103);
+            this.circleButton2.Name = "circleButton2";
+            this.circleButton2.Size = new System.Drawing.Size(50, 50);
+            this.circleButton2.TabIndex = 15;
+            this.circleButton2.Text = "A";
+            this.circleButton2.UseVisualStyleBackColor = false;
+            // 
+            // circleButton3
+            // 
+            this.circleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.circleButton3.FlatAppearance.BorderSize = 0;
+            this.circleButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton3.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButton3.ForeColor = System.Drawing.Color.White;
+            this.circleButton3.Location = new System.Drawing.Point(322, 26);
+            this.circleButton3.Name = "circleButton3";
+            this.circleButton3.Size = new System.Drawing.Size(50, 50);
+            this.circleButton3.TabIndex = 15;
+            this.circleButton3.Text = "v";
+            this.circleButton3.UseVisualStyleBackColor = false;
+            // 
+            // listBoxSoftware
+            // 
+            this.listBoxSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBoxSoftware.BackColor = System.Drawing.Color.White;
+            this.listBoxSoftware.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.listBoxSoftware.FormattingEnabled = true;
+            this.listBoxSoftware.ItemHeight = 21;
+            this.listBoxSoftware.Items.AddRange(new object[] {
+            "Приложение №1",
+            "Программа №2",
+            "Софт №3",
+            "GTA 5",
+            "Team Fortress 2",
+            "Dota 2"});
+            this.listBoxSoftware.Location = new System.Drawing.Point(7, 28);
+            this.listBoxSoftware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.listBoxSoftware.Name = "listBoxSoftware";
+            this.listBoxSoftware.Size = new System.Drawing.Size(308, 588);
+            this.listBoxSoftware.TabIndex = 0;
+            // 
             // buttonExit
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,15 +173,16 @@ namespace Software_Accounting.Forms
             this.buttonExit.ForeColor = System.Drawing.Color.White;
             this.buttonExit.Location = new System.Drawing.Point(851, 0);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(35, 35);
+            this.buttonExit.Size = new System.Drawing.Size(35, 29);
             this.buttonExit.TabIndex = 10;
             this.buttonExit.Text = "X";
-            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.circleButton4);
             this.groupBox1.Controls.Add(this.buttonDownload);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.labelFinishDate);
@@ -110,184 +197,191 @@ namespace Software_Accounting.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.progressBarPercentage);
-            this.groupBox1.Location = new System.Drawing.Point(462, 36);
+            this.groupBox1.Location = new System.Drawing.Point(438, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(414, 633);
+            this.groupBox1.Size = new System.Drawing.Size(435, 644);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Информация о задаче";
             // 
+            // circleButton4
+            // 
+            this.circleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.circleButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.circleButton4.FlatAppearance.BorderSize = 0;
+            this.circleButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton4.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButton4.ForeColor = System.Drawing.Color.White;
+            this.circleButton4.Location = new System.Drawing.Point(53, 581);
+            this.circleButton4.Name = "circleButton4";
+            this.circleButton4.Size = new System.Drawing.Size(50, 50);
+            this.circleButton4.TabIndex = 15;
+            this.circleButton4.Text = "i";
+            this.circleButton4.UseVisualStyleBackColor = false;
+            // 
             // buttonDownload
             // 
+            this.buttonDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.buttonDownload.FlatAppearance.BorderSize = 0;
             this.buttonDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDownload.ForeColor = System.Drawing.Color.White;
-            this.buttonDownload.Location = new System.Drawing.Point(79, 569);
+            this.buttonDownload.Location = new System.Drawing.Point(142, 581);
             this.buttonDownload.Name = "buttonDownload";
-            this.buttonDownload.Size = new System.Drawing.Size(263, 47);
+            this.buttonDownload.Size = new System.Drawing.Size(263, 50);
             this.buttonDownload.TabIndex = 12;
             this.buttonDownload.Text = "Скачать";
             this.buttonDownload.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Location = new System.Drawing.Point(3, 490);
+            this.label8.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label8.Location = new System.Drawing.Point(0, 449);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(402, 27);
+            this.label8.Size = new System.Drawing.Size(432, 27);
             this.label8.TabIndex = 1;
             this.label8.Text = "66%";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelFinishDate
             // 
-            this.labelFinishDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFinishDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFinishDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelFinishDate.Location = new System.Drawing.Point(-3, 380);
+            this.labelFinishDate.Location = new System.Drawing.Point(3, 351);
             this.labelFinishDate.Name = "labelFinishDate";
-            this.labelFinishDate.Size = new System.Drawing.Size(414, 27);
+            this.labelFinishDate.Size = new System.Drawing.Size(426, 27);
             this.labelFinishDate.TabIndex = 1;
             this.labelFinishDate.Text = "FinishDate";
             this.labelFinishDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(-3, 353);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label6.Location = new System.Drawing.Point(3, 324);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(414, 27);
+            this.label6.Size = new System.Drawing.Size(426, 27);
             this.label6.TabIndex = 1;
             this.label6.Text = "Дата завершения:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelStartDate
             // 
-            this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStartDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelStartDate.Location = new System.Drawing.Point(-3, 314);
+            this.labelStartDate.Location = new System.Drawing.Point(3, 285);
             this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(414, 27);
+            this.labelStartDate.Size = new System.Drawing.Size(426, 27);
             this.labelStartDate.TabIndex = 1;
             this.labelStartDate.Text = "StartDate";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Location = new System.Drawing.Point(-3, 287);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label4.Location = new System.Drawing.Point(3, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(414, 27);
+            this.label4.Size = new System.Drawing.Size(426, 27);
             this.label4.TabIndex = 1;
             this.label4.Text = "Дата начала:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSoftwareName
             // 
-            this.labelSoftwareName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSoftwareName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSoftwareName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelSoftwareName.Location = new System.Drawing.Point(0, 105);
+            this.labelSoftwareName.Location = new System.Drawing.Point(6, 76);
             this.labelSoftwareName.Name = "labelSoftwareName";
-            this.labelSoftwareName.Size = new System.Drawing.Size(414, 27);
+            this.labelSoftwareName.Size = new System.Drawing.Size(426, 27);
             this.labelSoftwareName.TabIndex = 1;
             this.labelSoftwareName.Text = "SoftwareName";
             this.labelSoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelCategoryName
             // 
-            this.labelCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCategoryName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelCategoryName.Location = new System.Drawing.Point(0, 175);
+            this.labelCategoryName.Location = new System.Drawing.Point(6, 146);
             this.labelCategoryName.Name = "labelCategoryName";
-            this.labelCategoryName.Size = new System.Drawing.Size(414, 27);
+            this.labelCategoryName.Size = new System.Drawing.Size(426, 27);
             this.labelCategoryName.TabIndex = 1;
             this.labelCategoryName.Text = "CategoryName";
             this.labelCategoryName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Location = new System.Drawing.Point(0, 77);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label5.Location = new System.Drawing.Point(6, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(414, 27);
+            this.label5.Size = new System.Drawing.Size(426, 27);
             this.label5.TabIndex = 1;
             this.label5.Text = "Название:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(0, 147);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label3.Location = new System.Drawing.Point(6, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(414, 27);
+            this.label3.Size = new System.Drawing.Size(426, 27);
             this.label3.TabIndex = 1;
             this.label3.Text = "Категория:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelEmployeeFullname
             // 
-            this.labelEmployeeFullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelEmployeeFullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmployeeFullname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.labelEmployeeFullname.Location = new System.Drawing.Point(-3, 245);
+            this.labelEmployeeFullname.Location = new System.Drawing.Point(3, 216);
             this.labelEmployeeFullname.Name = "labelEmployeeFullname";
-            this.labelEmployeeFullname.Size = new System.Drawing.Size(414, 27);
+            this.labelEmployeeFullname.Size = new System.Drawing.Size(426, 27);
             this.labelEmployeeFullname.TabIndex = 1;
             this.labelEmployeeFullname.Text = "EmployeeFullname";
             this.labelEmployeeFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(-3, 217);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label2.Location = new System.Drawing.Point(3, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(414, 27);
+            this.label2.Size = new System.Drawing.Size(426, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Автор:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Location = new System.Drawing.Point(-3, 437);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.Location = new System.Drawing.Point(3, 408);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 27);
+            this.label1.Size = new System.Drawing.Size(426, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Стадия выполнения";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // progressBarPercentage
             // 
-            this.progressBarPercentage.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.progressBarPercentage.Location = new System.Drawing.Point(3, 480);
+            this.progressBarPercentage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarPercentage.Location = new System.Drawing.Point(9, 436);
             this.progressBarPercentage.Name = "progressBarPercentage";
-            this.progressBarPercentage.Size = new System.Drawing.Size(402, 10);
+            this.progressBarPercentage.Size = new System.Drawing.Size(414, 10);
             this.progressBarPercentage.Step = 1;
             this.progressBarPercentage.TabIndex = 0;
             this.progressBarPercentage.Value = 50;
-            // 
-            // listBoxSoftware
-            // 
-            this.listBoxSoftware.FormattingEnabled = true;
-            this.listBoxSoftware.ItemHeight = 21;
-            this.listBoxSoftware.Items.AddRange(new object[] {
-            "Приложение №1",
-            "Программа №2",
-            "Софт №3",
-            "GTA 5",
-            "Team Fortress 2",
-            "Dota 2"});
-            this.listBoxSoftware.Location = new System.Drawing.Point(55, 35);
-            this.listBoxSoftware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.listBoxSoftware.Name = "listBoxSoftware";
-            this.listBoxSoftware.Size = new System.Drawing.Size(346, 634);
-            this.listBoxSoftware.TabIndex = 0;
             // 
             // textBoxFullname
             // 
@@ -313,11 +407,11 @@ namespace Software_Accounting.Forms
             this.buttonSearch.FlatAppearance.BorderSize = 0;
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(43, 386);
+            this.buttonSearch.Location = new System.Drawing.Point(12, 387);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(225, 47);
             this.buttonSearch.TabIndex = 12;
-            this.buttonSearch.Text = "Поиск";
+            this.buttonSearch.Text = "Сортировать";
             this.buttonSearch.UseVisualStyleBackColor = false;
             // 
             // comboBoxCategory
@@ -351,11 +445,13 @@ namespace Software_Accounting.Forms
             // 
             // trackBarPercent
             // 
+            this.trackBarPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.trackBarPercent.Location = new System.Drawing.Point(12, 293);
             this.trackBarPercent.Maximum = 100;
             this.trackBarPercent.Name = "trackBarPercent";
             this.trackBarPercent.Size = new System.Drawing.Size(296, 45);
             this.trackBarPercent.TabIndex = 14;
+            this.trackBarPercent.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBarPercent.Scroll += new System.EventHandler(this.trackBarPercent_Scroll);
             // 
             // label10
@@ -410,7 +506,7 @@ namespace Software_Accounting.Forms
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(12, 35);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(296, 27);
@@ -421,9 +517,9 @@ namespace Software_Accounting.Forms
             // panelDragging
             // 
             this.panelDragging.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelDragging.Location = new System.Drawing.Point(-3, 0);
+            this.panelDragging.Location = new System.Drawing.Point(0, 0);
             this.panelDragging.Name = "panelDragging";
-            this.panelDragging.Size = new System.Drawing.Size(1163, 29);
+            this.panelDragging.Size = new System.Drawing.Size(1169, 29);
             this.panelDragging.TabIndex = 11;
             this.panelDragging.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelDragging_MouseDown);
             this.panelDragging.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDragging_MouseMove);
@@ -434,6 +530,7 @@ namespace Software_Accounting.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.Controls.Add(this.circleButton1);
             this.Controls.Add(this.panelDragging);
             this.Controls.Add(this.trackBarPercent);
             this.Controls.Add(this.comboBoxCategory);
@@ -454,6 +551,7 @@ namespace Software_Accounting.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPercent)).EndInit();
             this.ResumeLayout(false);
@@ -493,5 +591,10 @@ namespace Software_Accounting.Forms
         private System.Windows.Forms.TextBox textBoxSoftwareName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelDragging;
+        private Resources.Classes.CircleButton circleButton1;
+        private Resources.Classes.CircleButton circleButton2;
+        private Resources.Classes.CircleButton circleButton3;
+        private Resources.Classes.CircleButton circleButton4;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

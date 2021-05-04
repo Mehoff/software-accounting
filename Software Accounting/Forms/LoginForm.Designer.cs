@@ -222,7 +222,7 @@ namespace Software_Accounting
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Software_Accounting.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
