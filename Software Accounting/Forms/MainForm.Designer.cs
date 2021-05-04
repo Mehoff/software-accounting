@@ -31,7 +31,6 @@ namespace Software_Accounting.Forms
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.circleButton1 = new Software_Accounting.Resources.Classes.CircleButton();
             this.circleButton2 = new Software_Accounting.Resources.Classes.CircleButton();
             this.circleButton3 = new Software_Accounting.Resources.Classes.CircleButton();
             this.listBoxSoftware = new System.Windows.Forms.ListBox();
@@ -52,6 +51,7 @@ namespace Software_Accounting.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBarPercentage = new System.Windows.Forms.ProgressBar();
+            this.circleButton1 = new Software_Accounting.Resources.Classes.CircleButton();
             this.textBoxFullname = new System.Windows.Forms.TextBox();
             this.panelFullname = new System.Windows.Forms.Panel();
             this.buttonSearch = new Software_Accounting.Resources.Classes.CircularButton();
@@ -95,21 +95,6 @@ namespace Software_Accounting.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Задачи";
             // 
-            // circleButton1
-            // 
-            this.circleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.circleButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.circleButton1.FlatAppearance.BorderSize = 0;
-            this.circleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleButton1.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.circleButton1.ForeColor = System.Drawing.Color.White;
-            this.circleButton1.Location = new System.Drawing.Point(251, 387);
-            this.circleButton1.Name = "circleButton1";
-            this.circleButton1.Size = new System.Drawing.Size(50, 50);
-            this.circleButton1.TabIndex = 15;
-            this.circleButton1.Text = "Q";
-            this.circleButton1.UseVisualStyleBackColor = false;
-            // 
             // circleButton2
             // 
             this.circleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -149,13 +134,6 @@ namespace Software_Accounting.Forms
             this.listBoxSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.listBoxSoftware.FormattingEnabled = true;
             this.listBoxSoftware.ItemHeight = 21;
-            this.listBoxSoftware.Items.AddRange(new object[] {
-            "Приложение №1",
-            "Программа №2",
-            "Софт №3",
-            "GTA 5",
-            "Team Fortress 2",
-            "Dota 2"});
             this.listBoxSoftware.Location = new System.Drawing.Point(7, 28);
             this.listBoxSoftware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBoxSoftware.Name = "listBoxSoftware";
@@ -383,6 +361,21 @@ namespace Software_Accounting.Forms
             this.progressBarPercentage.TabIndex = 0;
             this.progressBarPercentage.Value = 50;
             // 
+            // circleButton1
+            // 
+            this.circleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.circleButton1.FlatAppearance.BorderSize = 0;
+            this.circleButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButton1.Font = new System.Drawing.Font("Wingdings 3", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButton1.ForeColor = System.Drawing.Color.White;
+            this.circleButton1.Location = new System.Drawing.Point(251, 387);
+            this.circleButton1.Name = "circleButton1";
+            this.circleButton1.Size = new System.Drawing.Size(50, 50);
+            this.circleButton1.TabIndex = 15;
+            this.circleButton1.Text = "Q";
+            this.circleButton1.UseVisualStyleBackColor = false;
+            // 
             // textBoxFullname
             // 
             this.textBoxFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -420,13 +413,6 @@ namespace Software_Accounting.Forms
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Items.AddRange(new object[] {
-            "Вариант №1",
-            "Вариант №2",
-            "Вариант №3",
-            "Вариант №4",
-            "Вариант №5",
-            "Вариант №6"});
             this.comboBoxCategory.Location = new System.Drawing.Point(12, 218);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(296, 29);
@@ -550,6 +536,7 @@ namespace Software_Accounting.Forms
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

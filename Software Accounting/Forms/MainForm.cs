@@ -5,6 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+using Software_Accounting.Context;
+using Software_Accounting.Models;
 
 namespace Software_Accounting.Forms
 {
@@ -69,6 +72,21 @@ namespace Software_Accounting.Forms
                     (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
 
                 this.Update();
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            using (var ctx = new DBContext())
+            {
+
+                comboBoxCategory.DisplayMember = "Name";
+                comboBoxCategory.ValueMember = "Id";
+
+                comboBoxCategory.DataSource = ctx.UserTypes.ToList();
+
+
+
             }
         }
     }
