@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Linq;
 using Software_Accounting.Context;
 using Software_Accounting.Models;
+using Software_Accounting.Source;
 
 namespace Software_Accounting.Forms
 {
@@ -28,8 +29,11 @@ namespace Software_Accounting.Forms
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Information);
             
-            if(result == DialogResult.Yes) 
+            if(result == DialogResult.Yes)
+            {
                 Close();
+                CurrentUser.LogOut();
+            } 
         }
 
         private void textBoxFullname_TextChanged(object sender, EventArgs e)

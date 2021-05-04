@@ -1,4 +1,6 @@
-﻿using Software_Accounting.Forms;
+﻿using Software_Accounting.Context;
+using Software_Accounting.Models;
+using Software_Accounting.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Software_Accounting.Source;
 
 namespace Software_Accounting
 {
@@ -78,20 +81,60 @@ namespace Software_Accounting
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            try 
+            {
+                using (var ctx = new DBContext())
+                {
+                    var email = textBoxMail.Text.Trim();
+                    var password = textBoxPassword.Text.Trim();
+
+                    if (isLoggingIn)
+                    //Log In
+                    {
+                        var user = ctx.Employees.SingleOrDefault(e => e.Email == email && e.Password == password);
+
+                        if (user == null) 
+                        {
+                            MessageBox.Show("Пользователь не найден");
+                            return;
+                        }       
+                    }
+                    else
+                    //Register
+                    //TODO: Больше проверок: (6 символов, одна заглавная и тп, Regex на почту и ФИО)
+                    {
+                        var name = textBoxFullname.Text.Trim();
+                        var confirmation = textBoxConfirm.Text.Trim();
+
+                        if (!password.Equals(confirmation)) { MessageBox.Show("Пароли не совпадают"); return; }
+
+                        Employee newEmployee = new Employee
+                        {
+                            Fullname = name,
+                            Email = email,
+                            Password = password,
+                            UserTypeFk = 3, // Пользователь
+                            PositionFk = 1, // По дефолу все Junior Programmer, Admin может поменять эти значения
+                        };
+
+                        ctx.Employees.Add(newEmployee);
+                        ctx.SaveChanges();
+
+                        MessageBox.Show("Успешная регистрация!");
+                    }
+
+                    CurrentUser.Instance.Employee = ctx.Employees.SingleOrDefault(e => e.Email == email && e.Password == password);
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            Hide();
             var mainForm = new MainForm();
             mainForm.ShowDialog();
-            this.Show();
-            //if (isLoggingIn)
-            ////Log In
-            //{
-
-            //}
-            //else
-            ////Register
-            //{
-
-            //}
+            Show();
         }
         private void panelDragging_MouseDown(object sender, MouseEventArgs e)
         {
