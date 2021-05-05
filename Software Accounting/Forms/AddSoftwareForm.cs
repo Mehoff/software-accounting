@@ -88,6 +88,7 @@ namespace Software_Accounting.Forms
             var isNewProject = ((ComboBoxProjectItem)comboBoxProject.SelectedItem).Value == -1 ? true : false;
 
             int? newProjectId = null;
+
             try 
             {
                 using (var ctx = new DBContext())
@@ -113,13 +114,34 @@ namespace Software_Accounting.Forms
                 {
                     var newSoftwareName = textBoxName.Text.Trim();
 
+                    int? newSoftwareProjectFK;
+
+                    switch (((ComboBoxProjectItem)comboBoxProject.SelectedItem).Value) 
+                    {
+                        case -1:
+                            {
+                                newSoftwareProjectFK = newProjectId;
+                            }
+                            break;
+                        case -2:
+                            {
+                                newSoftwareProjectFK = null;
+                            }
+                            break;
+                        default:
+                            {
+                                newSoftwareProjectFK = ((ComboBoxProjectItem)comboBoxProject.SelectedItem).Value;
+                            }
+                            break;
+                    }
+
                     ctx.Softwares.Add(new Software
                     {
                         Name = newSoftwareName,
                         ProgressStatusFk = 1,
                         BeginDateTime = DateTime.Now,
                         AuthorFk = CurrentUser.Instance.Employee.Id,
-                        ProjectFk = isNewProject ? newProjectId : ((ComboBoxProjectItem)comboBoxProject.SelectedItem).Value
+                        ProjectFk = newSoftwareProjectFK
                     });
 
                     ctx.SaveChanges();

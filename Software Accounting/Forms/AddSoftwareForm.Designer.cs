@@ -233,6 +233,7 @@ namespace Software_Accounting.Forms
             this.Controls.Add(this.buttonDownload);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "AddSoftwareForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSoftwareForm";
             this.Load += new System.EventHandler(this.AddSoftwareForm_Load);
             this.panel1.ResumeLayout(false);

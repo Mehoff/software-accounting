@@ -99,7 +99,7 @@ namespace Software_Accounting.Forms
 
         private void circleButtonProfile_Click(object sender, EventArgs e)
         {
-            var profileForm = new ProfileForm();
+            var profileForm = new ProfileForm(CurrentUser.Instance.Employee.Id);
             profileForm.ShowDialog();
         }
 
