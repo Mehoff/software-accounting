@@ -171,6 +171,7 @@ namespace Software_Accounting
             this.textBoxPassword.PlaceholderText = "Пароль";
             this.textBoxPassword.Size = new System.Drawing.Size(457, 16);
             this.textBoxPassword.TabIndex = 3;
+            this.textBoxPassword.Text = "admin";
             // 
             // panelPassword
             // 
@@ -188,6 +189,7 @@ namespace Software_Accounting
             this.textBoxMail.PlaceholderText = "Почта";
             this.textBoxMail.Size = new System.Drawing.Size(457, 16);
             this.textBoxMail.TabIndex = 2;
+            this.textBoxMail.Text = "admin@gmail.com";
             // 
             // panelEmail
             // 

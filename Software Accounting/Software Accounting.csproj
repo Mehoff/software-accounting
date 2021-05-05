@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Resources\Images\Logo.png" />
+    <None Remove="Resources\Images\Profile.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\Profile.png" />
   </ItemGroup>
 
   <ItemGroup>
