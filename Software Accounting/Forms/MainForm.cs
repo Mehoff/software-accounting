@@ -12,6 +12,12 @@ using Software_Accounting.Source;
 
 namespace Software_Accounting.Forms
 {
+    public struct ComboBoxItem
+    {
+        public int Value { get; set; }
+        public string Name { get; set; }
+    }
+
     public partial class MainForm : Form
     {
         private bool mouseDown;
@@ -36,6 +42,7 @@ namespace Software_Accounting.Forms
             {
                 var Software = ctx.Softwares.ToList();
 
+
                 var FullName = textBoxFullname.Text.Trim();
                 var SoftwareName = textBoxSoftwareName.Text.Trim();
 
@@ -43,19 +50,64 @@ namespace Software_Accounting.Forms
                 // TODO: Добавить в комбобокс вариант "Без проекта" и обработку этого варианта в этой функции
                 if (FullName.Length > 0) 
                 {
-                    Software = Software.Where(s => s.AuthorFkNavigation.Fullname.ToLower().Contains(FullName.ToLower())).ToList();
+                    //BUG Author is null
+
+                    var temp = new List<Software>();
+                    foreach(var soft in Software) 
+                    {
+                        var employee = ctx.Employees.SingleOrDefault(e => e.Id == soft.AuthorFk);
+                        if (employee == null)
+                            continue;
+
+                        if (employee.Fullname.ToLower().Contains(SoftwareName.ToLower())) 
+                            temp.Add(soft);
+                    }
+
+                    Software = temp;
+
                 }
                 if (SoftwareName.Length > 0)
                 {
                     Software = Software.Where(s => s.Name.ToLower().Contains(SoftwareName.ToLower())).ToList();
                 }
+
                 if(comboBoxProjects.SelectedIndex != -1) 
                 {
-                    Software = Software.Where(s => s.ProjectFk == (comboBoxProjects.SelectedItem as Project).Id).ToList();
+                    var SelectedComboBoxItem = (ComboBoxItem)comboBoxProjects.Items[comboBoxProjects.SelectedIndex];
+
+                    switch (SelectedComboBoxItem.Value) 
+                    {
+                        // Любой
+                        case -1: { }
+                            break;
+                        case -2:
+                            {
+                                Software = Software.Where(s => s.ProjectFk == null).ToList(); 
+                            }
+                            break;
+                        default:
+                            {
+                                Software = Software.Where(s => s.ProjectFk == SelectedComboBoxItem.Value).ToList();
+                            }
+                            break;
+                    }
                 }
+
                 if(comboBoxProgressStatus.SelectedIndex != -1) 
                 {
-                    Software = Software.Where(s => s.ProgressStatusFk == (comboBoxProgressStatus.SelectedItem as ProgressStatus).Id).ToList();
+                    var SelectedComboBoxItem = (ComboBoxItem)comboBoxProgressStatus.Items[comboBoxProgressStatus.SelectedIndex];
+
+                    switch (SelectedComboBoxItem.Value) 
+                    {
+                        // Любой
+                        case -1: { }
+                            break;
+                        default:
+                            {
+                                Software = Software.Where(s => s.ProgressStatusFk == SelectedComboBoxItem.Value).ToList();
+                            }
+                            break;
+                    }
                 }
 
                 listBoxSoftware.DataSource = Software;
@@ -87,6 +139,8 @@ namespace Software_Accounting.Forms
                 var ProjectName = ctx.Projects.SingleOrDefault(p => software.ProjectFk == p.Id);
 
                 labelEmployeeFullname.Text = Employee != null ? Employee.Fullname : "Нет данных";
+                labelEmployeeFullname.Tag = Employee.Id;
+
                 labelProgressStatus.Text = ProgressStatus != null ? ProgressStatus.Name : "Нет данных";
                 labelProjectName.Text = ProjectName != null ? ProjectName.Name : "Нет данных";
 
@@ -112,15 +166,31 @@ namespace Software_Accounting.Forms
 
         private void LoadComboBoxes()
         {
-            using (var ctx = new DBContext())
+            using(var ctx = new DBContext()) 
             {
+                comboBoxProjects.Items.Clear();
                 comboBoxProjects.DisplayMember = "Name";
-                comboBoxProjects.ValueMember = "Id";
-                comboBoxProjects.DataSource = ctx.Projects.ToList();
+                comboBoxProjects.ValueMember = "Value";
 
+                comboBoxProjects.Items.Add(new ComboBoxItem { Value = -1, Name = "Любой" });
+                comboBoxProjects.Items.Add(new ComboBoxItem { Value = -2, Name = "Без проекта" });
+
+                var Projects = ctx.Projects.ToList();
+
+                foreach (var project in Projects)
+                    comboBoxProjects.Items.Add(new ComboBoxItem { Value = project.Id, Name = project.Name });
+
+
+                comboBoxProgressStatus.Items.Clear();
                 comboBoxProgressStatus.DisplayMember = "Name";
-                comboBoxProgressStatus.ValueMember = "Id";
-                comboBoxProgressStatus.DataSource = ctx.ProgressStatuses.ToList();
+                comboBoxProgressStatus.ValueMember = "Value";
+
+                comboBoxProgressStatus.Items.Add(new ComboBoxItem { Value = -1, Name = "Любой" });
+
+                var ProgressStatuses = ctx.ProgressStatuses.ToList();
+
+                foreach (var status in ProgressStatuses)
+                    comboBoxProgressStatus.Items.Add(new ComboBoxItem { Value = status.Id, Name = status.Name });
             }
         }
 
@@ -161,6 +231,10 @@ namespace Software_Accounting.Forms
             }
         }
 
-
+        private void labelEmployeeFullname_Click(object sender, EventArgs e)
+        {
+            var ProfileForm = new ProfileForm((int)labelEmployeeFullname.Tag);
+            ProfileForm.ShowDialog();
+        }
     }
 }

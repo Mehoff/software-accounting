@@ -318,13 +318,16 @@ namespace Software_Accounting.Forms
             // labelEmployeeFullname
             // 
             this.labelEmployeeFullname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelEmployeeFullname.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelEmployeeFullname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelEmployeeFullname.Font = new System.Drawing.Font("Yu Gothic UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.labelEmployeeFullname.Location = new System.Drawing.Point(3, 194);
             this.labelEmployeeFullname.Name = "labelEmployeeFullname";
             this.labelEmployeeFullname.Size = new System.Drawing.Size(426, 27);
             this.labelEmployeeFullname.TabIndex = 1;
             this.labelEmployeeFullname.Text = "EmployeeFullname";
             this.labelEmployeeFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelEmployeeFullname.Click += new System.EventHandler(this.labelEmployeeFullname_Click);
             // 
             // label2
             // 
@@ -358,7 +361,6 @@ namespace Software_Accounting.Forms
             this.textBoxFullname.PlaceholderText = "ФИО";
             this.textBoxFullname.Size = new System.Drawing.Size(296, 22);
             this.textBoxFullname.TabIndex = 11;
-            this.textBoxFullname.Click += new System.EventHandler(this.TriggerSoftwareLoad);
             // 
             // panelFullname
             // 
