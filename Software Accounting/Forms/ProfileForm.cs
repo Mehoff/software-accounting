@@ -78,5 +78,10 @@ namespace Software_Accounting.Forms
         {
             // TODO...
         }
+
+        private void circleButtonEditProfile_Click(object sender, EventArgs e)
+        {
+            // TODO...
+        }
     }
 }

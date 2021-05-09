@@ -37,6 +37,7 @@ namespace Software_Accounting.Forms
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonDownload = new Software_Accounting.Resources.Classes.CircularButton();
+            this.circleButtonEditSoftware = new Software_Accounting.Resources.Classes.CircleButton();
             this.labelProgressStatus = new System.Windows.Forms.Label();
             this.labelFinishDate = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace Software_Accounting.Forms
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxProgressStatus = new System.Windows.Forms.ComboBox();
             this.circleButtonAddSoftware = new Software_Accounting.Resources.Classes.CircleButton();
-            this.circleButtonEditSoftware = new Software_Accounting.Resources.Classes.CircleButton();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,6 +84,7 @@ namespace Software_Accounting.Forms
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.circleButtonAddSoftware);
             this.groupBox2.Controls.Add(this.listBoxSoftware);
             this.groupBox2.Location = new System.Drawing.Point(13, 35);
             this.groupBox2.Name = "groupBox2";
@@ -104,7 +105,7 @@ namespace Software_Accounting.Forms
             this.listBoxSoftware.Location = new System.Drawing.Point(7, 28);
             this.listBoxSoftware.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.listBoxSoftware.Name = "listBoxSoftware";
-            this.listBoxSoftware.Size = new System.Drawing.Size(379, 588);
+            this.listBoxSoftware.Size = new System.Drawing.Size(393, 546);
             this.listBoxSoftware.TabIndex = 0;
             this.listBoxSoftware.SelectedIndexChanged += new System.EventHandler(this.listBoxSoftware_SelectedIndexChanged);
             // 
@@ -174,12 +175,31 @@ namespace Software_Accounting.Forms
             this.buttonDownload.FlatAppearance.BorderSize = 0;
             this.buttonDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDownload.ForeColor = System.Drawing.Color.White;
-            this.buttonDownload.Location = new System.Drawing.Point(89, 507);
+            this.buttonDownload.Location = new System.Drawing.Point(88, 507);
             this.buttonDownload.Name = "buttonDownload";
             this.buttonDownload.Size = new System.Drawing.Size(263, 50);
             this.buttonDownload.TabIndex = 12;
             this.buttonDownload.Text = "Скачать";
             this.buttonDownload.UseVisualStyleBackColor = false;
+            // 
+            // circleButtonEditSoftware
+            // 
+            this.circleButtonEditSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButtonEditSoftware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.circleButtonEditSoftware.BackgroundImage = global::Software_Accounting.Properties.Resources.edit;
+            this.circleButtonEditSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.circleButtonEditSoftware.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.circleButtonEditSoftware.FlatAppearance.BorderSize = 0;
+            this.circleButtonEditSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButtonEditSoftware.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButtonEditSoftware.ForeColor = System.Drawing.Color.White;
+            this.circleButtonEditSoftware.Location = new System.Drawing.Point(379, 31);
+            this.circleButtonEditSoftware.Name = "circleButtonEditSoftware";
+            this.circleButtonEditSoftware.Size = new System.Drawing.Size(50, 50);
+            this.circleButtonEditSoftware.TabIndex = 15;
+            this.circleButtonEditSoftware.UseVisualStyleBackColor = false;
+            this.circleButtonEditSoftware.Visible = false;
+            this.circleButtonEditSoftware.Click += new System.EventHandler(this.circleButtonEditSoftware_Click);
             // 
             // labelProgressStatus
             // 
@@ -465,7 +485,7 @@ namespace Software_Accounting.Forms
             this.circleButtonAddSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.circleButtonAddSoftware.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.circleButtonAddSoftware.ForeColor = System.Drawing.Color.White;
-            this.circleButtonAddSoftware.Location = new System.Drawing.Point(12, 617);
+            this.circleButtonAddSoftware.Location = new System.Drawing.Point(7, 579);
             this.circleButtonAddSoftware.Name = "circleButtonAddSoftware";
             this.circleButtonAddSoftware.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.circleButtonAddSoftware.Size = new System.Drawing.Size(60, 60);
@@ -473,30 +493,10 @@ namespace Software_Accounting.Forms
             this.circleButtonAddSoftware.UseVisualStyleBackColor = false;
             this.circleButtonAddSoftware.Click += new System.EventHandler(this.circleButtonAddSoftware_Click);
             // 
-            // circleButtonEditSoftware
-            // 
-            this.circleButtonEditSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.circleButtonEditSoftware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.circleButtonEditSoftware.BackgroundImage = global::Software_Accounting.Properties.Resources.edit;
-            this.circleButtonEditSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.circleButtonEditSoftware.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.circleButtonEditSoftware.FlatAppearance.BorderSize = 0;
-            this.circleButtonEditSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleButtonEditSoftware.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.circleButtonEditSoftware.ForeColor = System.Drawing.Color.White;
-            this.circleButtonEditSoftware.Location = new System.Drawing.Point(33, 507);
-            this.circleButtonEditSoftware.Name = "circleButtonEditSoftware";
-            this.circleButtonEditSoftware.Size = new System.Drawing.Size(50, 50);
-            this.circleButtonEditSoftware.TabIndex = 15;
-            this.circleButtonEditSoftware.UseVisualStyleBackColor = false;
-            this.circleButtonEditSoftware.Visible = false;
-            this.circleButtonEditSoftware.Click += new System.EventHandler(this.circleButtonProfile_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1200, 700);
-            this.Controls.Add(this.circleButtonAddSoftware);
             this.Controls.Add(this.panelDragging);
             this.Controls.Add(this.comboBoxProgressStatus);
             this.Controls.Add(this.comboBoxProjects);

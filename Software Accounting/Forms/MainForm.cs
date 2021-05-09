@@ -253,6 +253,15 @@ namespace Software_Accounting.Forms
             ProfileForm.ShowDialog();
         }
 
+        private void circleButtonEditSoftware_Click(object sender, EventArgs e)
+        {
+            var SoftwareId = (listBoxSoftware.SelectedItem as Software).Id;
+            var form = new EditSoftwareForm(SoftwareId);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
 
+            //TODO: Update visual data
+        }
     }
 }
