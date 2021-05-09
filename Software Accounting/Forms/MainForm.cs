@@ -33,6 +33,7 @@ namespace Software_Accounting.Forms
         }
 
 
+
         // Пока не работает
         private void TriggerSoftwareLoad(object sender, EventArgs e) 
         {
@@ -121,9 +122,7 @@ namespace Software_Accounting.Forms
         {
             if (listBoxSoftware.SelectedIndex == -1)
                 return;
-            
-            // TODO: Сделать Лейбл кликабельным чтобы можно было открыть профиль этого пользователя и посмотреть все его остальные проекты в другом окне
-                
+         
             using (var ctx = new DBContext()) 
             {
                 Software software = ctx.Softwares.SingleOrDefault(s => s.Id == (listBoxSoftware.SelectedItem as Software).Id);
@@ -135,6 +134,12 @@ namespace Software_Accounting.Forms
                 }
 
                 var Employee = ctx.Employees.SingleOrDefault(e => software.AuthorFk == e.Id);
+
+                if (Employee.Id == CurrentUser.Instance.Employee.Id || CurrentUser.Instance.Employee.UserTypeFk == 1)
+                    DrawSoftwareEditButton();
+                else HideSoftwareEditButton();
+                
+
                 var ProgressStatus = ctx.ProgressStatuses.SingleOrDefault(ps => software.ProgressStatusFk == ps.Id);
                 var ProjectName = ctx.Projects.SingleOrDefault(p => software.ProjectFk == p.Id);
 
@@ -149,6 +154,16 @@ namespace Software_Accounting.Forms
                 
                 labelSoftwareName.Text = software.Name;
             }
+        }
+
+        private void HideSoftwareEditButton()
+        {
+            circleButtonEditSoftware.Visible = false;
+        }
+
+        private void DrawSoftwareEditButton()
+        {
+            circleButtonEditSoftware.Visible = true;
         }
 
         private void circleButtonProfile_Click(object sender, EventArgs e)
@@ -195,6 +210,7 @@ namespace Software_Accounting.Forms
         }
 
 
+        // Opens Administrator Panel
         private void buttonExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -236,5 +252,7 @@ namespace Software_Accounting.Forms
             var ProfileForm = new ProfileForm((int)labelEmployeeFullname.Tag);
             ProfileForm.ShowDialog();
         }
+
+
     }
 }

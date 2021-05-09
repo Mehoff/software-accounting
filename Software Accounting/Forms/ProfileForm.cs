@@ -38,20 +38,24 @@ namespace Software_Accounting.Forms
                 labelFullname.Text = Employee.Fullname;
                 labelEmail.Text = Employee.Email;
 
-
                 var UserType = ctx.UserTypes.SingleOrDefault(ut => ut.Id == Employee.UserTypeFk);
                 var Position = ctx.Positions.SingleOrDefault(p => p.Id == Employee.PositionFk);
 
-
                 labelUserType.Text = UserType.Name;
                 labelPosition.Text = Position.Name;
-
-
             }
         }
 
         private void listBoxSoftware_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxSoftware.SelectedIndex == -1) 
+            {
+                circularButtonDownload.Enabled = false;
+                return;
+            }
+
+            circularButtonDownload.Enabled = true;
+
             using(var ctx = new DBContext()) 
             {
                 var software = ctx.Softwares.SingleOrDefault(s => s.Id == (listBoxSoftware.SelectedItem as Software).Id);

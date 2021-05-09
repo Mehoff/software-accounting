@@ -112,7 +112,9 @@ namespace Software_Accounting.Forms
 
                 using (var ctx = new DBContext())
                 {
+                    //Check for nulls
                     var newSoftwareName = textBoxName.Text.Trim();
+                    var newSoftwareUrl = textBoxURL.Text.Trim();
 
                     int? newSoftwareProjectFK;
 
@@ -141,6 +143,7 @@ namespace Software_Accounting.Forms
                         ProgressStatusFk = 1,
                         BeginDateTime = DateTime.Now,
                         AuthorFk = CurrentUser.Instance.Employee.Id,
+                        SourceUrl = newSoftwareUrl,
                         ProjectFk = newSoftwareProjectFK
                     });
 

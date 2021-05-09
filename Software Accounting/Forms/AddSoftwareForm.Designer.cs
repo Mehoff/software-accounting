@@ -43,6 +43,8 @@ namespace Software_Accounting.Forms
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelNewProjectName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxURL = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +95,7 @@ namespace Software_Accounting.Forms
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(0, 174);
+            this.label3.Location = new System.Drawing.Point(0, 247);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(467, 27);
             this.label3.TabIndex = 1;
@@ -141,11 +143,13 @@ namespace Software_Accounting.Forms
             this.groupBox1.Controls.Add(this.circularButtonAdd);
             this.groupBox1.Controls.Add(this.comboBoxProject);
             this.groupBox1.Controls.Add(this.textBoxNewProjectName);
+            this.groupBox1.Controls.Add(this.textBoxURL);
             this.groupBox1.Controls.Add(this.textBoxAuthor);
             this.groupBox1.Controls.Add(this.textBoxName);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.labelNewProjectName);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(349, 12);
             this.groupBox1.Name = "groupBox1";
@@ -157,7 +161,7 @@ namespace Software_Accounting.Forms
             // circularButtonAdd
             // 
             this.circularButtonAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.circularButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.circularButtonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.circularButtonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.circularButtonAdd.FlatAppearance.BorderSize = 0;
             this.circularButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -179,7 +183,7 @@ namespace Software_Accounting.Forms
             this.comboBoxProject.Items.AddRange(new object[] {
             "Новый проект...",
             "Не пренадлежит к проектам"});
-            this.comboBoxProject.Location = new System.Drawing.Point(0, 204);
+            this.comboBoxProject.Location = new System.Drawing.Point(0, 277);
             this.comboBoxProject.Name = "comboBoxProject";
             this.comboBoxProject.Size = new System.Drawing.Size(467, 29);
             this.comboBoxProject.TabIndex = 3;
@@ -188,7 +192,7 @@ namespace Software_Accounting.Forms
             // textBoxNewProjectName
             // 
             this.textBoxNewProjectName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNewProjectName.Location = new System.Drawing.Point(0, 266);
+            this.textBoxNewProjectName.Location = new System.Drawing.Point(0, 339);
             this.textBoxNewProjectName.Name = "textBoxNewProjectName";
             this.textBoxNewProjectName.Size = new System.Drawing.Size(467, 29);
             this.textBoxNewProjectName.TabIndex = 2;
@@ -215,12 +219,33 @@ namespace Software_Accounting.Forms
             this.labelNewProjectName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNewProjectName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelNewProjectName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.labelNewProjectName.Location = new System.Drawing.Point(0, 236);
+            this.labelNewProjectName.Location = new System.Drawing.Point(0, 309);
             this.labelNewProjectName.Name = "labelNewProjectName";
             this.labelNewProjectName.Size = new System.Drawing.Size(467, 27);
             this.labelNewProjectName.TabIndex = 1;
             this.labelNewProjectName.Text = "Название нового проекта:";
             this.labelNewProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.label1.Location = new System.Drawing.Point(0, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(467, 27);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "URL:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBoxURL
+            // 
+            this.textBoxURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxURL.Enabled = false;
+            this.textBoxURL.Location = new System.Drawing.Point(0, 209);
+            this.textBoxURL.Name = "textBoxURL";
+            this.textBoxURL.Size = new System.Drawing.Size(467, 29);
+            this.textBoxURL.TabIndex = 2;
             // 
             // AddSoftwareForm
             // 
@@ -260,5 +285,7 @@ namespace Software_Accounting.Forms
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxNewProjectName;
         private System.Windows.Forms.Label labelNewProjectName;
+        private System.Windows.Forms.TextBox textBoxURL;
+        private System.Windows.Forms.Label label1;
     }
 }

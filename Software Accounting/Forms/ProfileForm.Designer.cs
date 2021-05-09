@@ -41,6 +41,7 @@ namespace Software_Accounting.Forms
             this.labelUserType = new System.Windows.Forms.Label();
             this.labelFullname = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.circularButtonDownload = new Software_Accounting.Resources.Classes.CircularButton();
             this.labelProgressState = new System.Windows.Forms.Label();
             this.labelFinishDate = new System.Windows.Forms.Label();
             this.labelBeginDate = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@ namespace Software_Accounting.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listBoxSoftware = new System.Windows.Forms.ListBox();
-            this.circularButtonDownload = new Software_Accounting.Resources.Classes.CircularButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,7 +118,7 @@ namespace Software_Accounting.Forms
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(300, 27);
             this.labelEmail.TabIndex = 4;
-            this.labelEmail.Text = "ProjectName";
+            this.labelEmail.Text = "Нет данных";
             this.labelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -168,7 +168,7 @@ namespace Software_Accounting.Forms
             this.labelPosition.Name = "labelPosition";
             this.labelPosition.Size = new System.Drawing.Size(300, 27);
             this.labelPosition.TabIndex = 4;
-            this.labelPosition.Text = "ProjectName";
+            this.labelPosition.Text = "Нет данных";
             this.labelPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelUserType
@@ -180,7 +180,7 @@ namespace Software_Accounting.Forms
             this.labelUserType.Name = "labelUserType";
             this.labelUserType.Size = new System.Drawing.Size(300, 27);
             this.labelUserType.TabIndex = 4;
-            this.labelUserType.Text = "ProjectName";
+            this.labelUserType.Text = "Нет данных";
             this.labelUserType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelFullname
@@ -191,7 +191,7 @@ namespace Software_Accounting.Forms
             this.labelFullname.Name = "labelFullname";
             this.labelFullname.Size = new System.Drawing.Size(300, 27);
             this.labelFullname.TabIndex = 4;
-            this.labelFullname.Text = "ProjectName";
+            this.labelFullname.Text = "Нет данных";
             this.labelFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox2
@@ -215,6 +215,22 @@ namespace Software_Accounting.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Задачи пользователя";
             // 
+            // circularButtonDownload
+            // 
+            this.circularButtonDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.circularButtonDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.circularButtonDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.circularButtonDownload.Enabled = false;
+            this.circularButtonDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonDownload.ForeColor = System.Drawing.Color.White;
+            this.circularButtonDownload.Location = new System.Drawing.Point(40, 374);
+            this.circularButtonDownload.Name = "circularButtonDownload";
+            this.circularButtonDownload.Size = new System.Drawing.Size(266, 45);
+            this.circularButtonDownload.TabIndex = 4;
+            this.circularButtonDownload.Text = "Скачать";
+            this.circularButtonDownload.UseVisualStyleBackColor = false;
+            this.circularButtonDownload.Click += new System.EventHandler(this.circularButtonDownload_Click);
+            // 
             // labelProgressState
             // 
             this.labelProgressState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -223,7 +239,7 @@ namespace Software_Accounting.Forms
             this.labelProgressState.Name = "labelProgressState";
             this.labelProgressState.Size = new System.Drawing.Size(300, 27);
             this.labelProgressState.TabIndex = 2;
-            this.labelProgressState.Text = "SoftwareName";
+            this.labelProgressState.Text = "Нет данных";
             this.labelProgressState.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelFinishDate
@@ -234,7 +250,7 @@ namespace Software_Accounting.Forms
             this.labelFinishDate.Name = "labelFinishDate";
             this.labelFinishDate.Size = new System.Drawing.Size(300, 27);
             this.labelFinishDate.TabIndex = 2;
-            this.labelFinishDate.Text = "SoftwareName";
+            this.labelFinishDate.Text = "Нет данных";
             this.labelFinishDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelBeginDate
@@ -245,7 +261,7 @@ namespace Software_Accounting.Forms
             this.labelBeginDate.Name = "labelBeginDate";
             this.labelBeginDate.Size = new System.Drawing.Size(300, 27);
             this.labelBeginDate.TabIndex = 2;
-            this.labelBeginDate.Text = "SoftwareName";
+            this.labelBeginDate.Text = "Нет данных";
             this.labelBeginDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelProjectName
@@ -256,7 +272,7 @@ namespace Software_Accounting.Forms
             this.labelProjectName.Name = "labelProjectName";
             this.labelProjectName.Size = new System.Drawing.Size(300, 27);
             this.labelProjectName.TabIndex = 2;
-            this.labelProjectName.Text = "SoftwareName";
+            this.labelProjectName.Text = "Нет данных";
             this.labelProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelSoftwareName
@@ -267,7 +283,7 @@ namespace Software_Accounting.Forms
             this.labelSoftwareName.Name = "labelSoftwareName";
             this.labelSoftwareName.Size = new System.Drawing.Size(300, 27);
             this.labelSoftwareName.TabIndex = 2;
-            this.labelSoftwareName.Text = "SoftwareName";
+            this.labelSoftwareName.Text = "Нет данных";
             this.labelSoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -340,21 +356,6 @@ namespace Software_Accounting.Forms
             this.listBoxSoftware.Size = new System.Drawing.Size(309, 319);
             this.listBoxSoftware.TabIndex = 0;
             this.listBoxSoftware.SelectedIndexChanged += new System.EventHandler(this.listBoxSoftware_SelectedIndexChanged);
-            // 
-            // circularButtonDownload
-            // 
-            this.circularButtonDownload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.circularButtonDownload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.circularButtonDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.circularButtonDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonDownload.ForeColor = System.Drawing.Color.White;
-            this.circularButtonDownload.Location = new System.Drawing.Point(40, 374);
-            this.circularButtonDownload.Name = "circularButtonDownload";
-            this.circularButtonDownload.Size = new System.Drawing.Size(266, 45);
-            this.circularButtonDownload.TabIndex = 4;
-            this.circularButtonDownload.Text = "Скачать";
-            this.circularButtonDownload.UseVisualStyleBackColor = false;
-            this.circularButtonDownload.Click += new System.EventHandler(this.circularButtonDownload_Click);
             // 
             // ProfileForm
             // 
