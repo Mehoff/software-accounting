@@ -10,8 +10,10 @@
   <ItemGroup>
     <None Remove="Resources\Images\addIcon.png" />
     <None Remove="Resources\Images\AdminIcon.png" />
+    <None Remove="Resources\Images\edit.png" />
     <None Remove="Resources\Images\Logo.png" />
     <None Remove="Resources\Images\Profile.png" />
+    <None Remove="Resources\Images\revert.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,8 +28,10 @@
   <ItemGroup>
     <Resource Include="Resources\Images\addIcon.png" />
     <Resource Include="Resources\Images\AdminIcon.png" />
+    <Resource Include="Resources\Images\edit.png" />
     <Resource Include="Resources\Images\Logo.png" />
     <Resource Include="Resources\Images\Profile.png" />
+    <Resource Include="Resources\Images\revert.png" />
   </ItemGroup>
 
   <ItemGroup>

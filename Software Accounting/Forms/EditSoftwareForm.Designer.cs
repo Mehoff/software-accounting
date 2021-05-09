@@ -29,7 +29,6 @@ namespace Software_Accounting.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSoftwareForm));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxProgressStatus = new System.Windows.Forms.ComboBox();
@@ -165,7 +164,7 @@ namespace Software_Accounting.Forms
             // 
             this.circleButtonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.circleButtonRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.circleButtonRestore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circleButtonRestore.BackgroundImage")));
+            this.circleButtonRestore.BackgroundImage = global::Software_Accounting.Properties.Resources.revert;
             this.circleButtonRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.circleButtonRestore.FlatAppearance.BorderSize = 0;
             this.circleButtonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -240,6 +239,7 @@ namespace Software_Accounting.Forms
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Name = "EditSoftwareForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditSoftwareForm";
             this.Load += new System.EventHandler(this.EditSoftwareForm_Load);
             this.panel1.ResumeLayout(false);

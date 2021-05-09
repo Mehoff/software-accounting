@@ -40,11 +40,11 @@ namespace Software_Accounting.Forms
             this.circularButtonAdd = new Software_Accounting.Resources.Classes.CircularButton();
             this.comboBoxProject = new System.Windows.Forms.ComboBox();
             this.textBoxNewProjectName = new System.Windows.Forms.TextBox();
+            this.textBoxURL = new System.Windows.Forms.TextBox();
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelNewProjectName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxURL = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -197,6 +197,14 @@ namespace Software_Accounting.Forms
             this.textBoxNewProjectName.Size = new System.Drawing.Size(467, 29);
             this.textBoxNewProjectName.TabIndex = 2;
             // 
+            // textBoxURL
+            // 
+            this.textBoxURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxURL.Location = new System.Drawing.Point(0, 209);
+            this.textBoxURL.Name = "textBoxURL";
+            this.textBoxURL.Size = new System.Drawing.Size(467, 29);
+            this.textBoxURL.TabIndex = 2;
+            // 
             // textBoxAuthor
             // 
             this.textBoxAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -237,15 +245,6 @@ namespace Software_Accounting.Forms
             this.label1.TabIndex = 1;
             this.label1.Text = "URL:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxURL
-            // 
-            this.textBoxURL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxURL.Enabled = false;
-            this.textBoxURL.Location = new System.Drawing.Point(0, 209);
-            this.textBoxURL.Name = "textBoxURL";
-            this.textBoxURL.Size = new System.Drawing.Size(467, 29);
-            this.textBoxURL.TabIndex = 2;
             // 
             // AddSoftwareForm
             // 

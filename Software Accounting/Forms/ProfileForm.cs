@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Software_Accounting.Source;
 
 namespace Software_Accounting.Forms
 {
@@ -28,6 +29,10 @@ namespace Software_Accounting.Forms
                 Employee = ctx.Employees.SingleOrDefault(e => e.Id == EmployeeId);
                 if (Employee == null)
                     return;
+
+                if(Employee.Id == CurrentUser.Instance.Employee.Id || CurrentUser.Instance.Employee.UserTypeFk == 1) 
+                    circleButtonEditProfile.Visible = true;
+                else  circleButtonEditProfile.Visible = false; 
 
                 // Softwares
                 listBoxSoftware.DisplayMember = "Name";
@@ -81,7 +86,10 @@ namespace Software_Accounting.Forms
 
         private void circleButtonEditProfile_Click(object sender, EventArgs e)
         {
-            // TODO...
+            var form = new EditUserForm(Employee.Id);
+            form.ShowDialog();
+
+            ProfileForm_Load(null, null);
         }
     }
 }

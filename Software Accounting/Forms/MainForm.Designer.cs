@@ -32,10 +32,11 @@ namespace Software_Accounting.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.circleButtonAddSoftware = new Software_Accounting.Resources.Classes.CircleButton();
             this.listBoxSoftware = new System.Windows.Forms.ListBox();
             this.circleButtonProfile = new Software_Accounting.Resources.Classes.CircleButton();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxInfo = new System.Windows.Forms.GroupBox();
             this.buttonDownload = new Software_Accounting.Resources.Classes.CircularButton();
             this.circleButtonEditSoftware = new Software_Accounting.Resources.Classes.CircleButton();
             this.labelProgressStatus = new System.Windows.Forms.Label();
@@ -63,10 +64,9 @@ namespace Software_Accounting.Forms
             this.panelDragging = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.comboBoxProgressStatus = new System.Windows.Forms.ComboBox();
-            this.circleButtonAddSoftware = new Software_Accounting.Resources.Classes.CircleButton();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +75,7 @@ namespace Software_Accounting.Forms
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.circleButtonProfile);
             this.panel1.Controls.Add(this.buttonExit);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.groupBoxInfo);
             this.panel1.Location = new System.Drawing.Point(315, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
@@ -92,6 +92,24 @@ namespace Software_Accounting.Forms
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Задачи";
+            // 
+            // circleButtonAddSoftware
+            // 
+            this.circleButtonAddSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.circleButtonAddSoftware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.circleButtonAddSoftware.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circleButtonAddSoftware.BackgroundImage")));
+            this.circleButtonAddSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.circleButtonAddSoftware.FlatAppearance.BorderSize = 0;
+            this.circleButtonAddSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButtonAddSoftware.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButtonAddSoftware.ForeColor = System.Drawing.Color.White;
+            this.circleButtonAddSoftware.Location = new System.Drawing.Point(7, 579);
+            this.circleButtonAddSoftware.Name = "circleButtonAddSoftware";
+            this.circleButtonAddSoftware.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.circleButtonAddSoftware.Size = new System.Drawing.Size(60, 60);
+            this.circleButtonAddSoftware.TabIndex = 15;
+            this.circleButtonAddSoftware.UseVisualStyleBackColor = false;
+            this.circleButtonAddSoftware.Click += new System.EventHandler(this.circleButtonAddSoftware_Click);
             // 
             // listBoxSoftware
             // 
@@ -144,29 +162,29 @@ namespace Software_Accounting.Forms
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // groupBox1
+            // groupBoxInfo
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.buttonDownload);
-            this.groupBox1.Controls.Add(this.circleButtonEditSoftware);
-            this.groupBox1.Controls.Add(this.labelProgressStatus);
-            this.groupBox1.Controls.Add(this.labelFinishDate);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.labelStartDate);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.labelSoftwareName);
-            this.groupBox1.Controls.Add(this.labelProjectName);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.labelEmployeeFullname);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(438, 94);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(435, 586);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Информация о задаче";
+            this.groupBoxInfo.BackColor = System.Drawing.Color.White;
+            this.groupBoxInfo.Controls.Add(this.buttonDownload);
+            this.groupBoxInfo.Controls.Add(this.circleButtonEditSoftware);
+            this.groupBoxInfo.Controls.Add(this.labelProgressStatus);
+            this.groupBoxInfo.Controls.Add(this.labelFinishDate);
+            this.groupBoxInfo.Controls.Add(this.label6);
+            this.groupBoxInfo.Controls.Add(this.labelStartDate);
+            this.groupBoxInfo.Controls.Add(this.label4);
+            this.groupBoxInfo.Controls.Add(this.labelSoftwareName);
+            this.groupBoxInfo.Controls.Add(this.labelProjectName);
+            this.groupBoxInfo.Controls.Add(this.label5);
+            this.groupBoxInfo.Controls.Add(this.label3);
+            this.groupBoxInfo.Controls.Add(this.labelEmployeeFullname);
+            this.groupBoxInfo.Controls.Add(this.label2);
+            this.groupBoxInfo.Controls.Add(this.label1);
+            this.groupBoxInfo.Location = new System.Drawing.Point(438, 94);
+            this.groupBoxInfo.Name = "groupBoxInfo";
+            this.groupBoxInfo.Size = new System.Drawing.Size(435, 586);
+            this.groupBoxInfo.TabIndex = 1;
+            this.groupBoxInfo.TabStop = false;
+            this.groupBoxInfo.Text = "Информация о задаче";
             // 
             // buttonDownload
             // 
@@ -475,24 +493,6 @@ namespace Software_Accounting.Forms
             this.comboBoxProgressStatus.TabIndex = 13;
             this.comboBoxProgressStatus.SelectedIndexChanged += new System.EventHandler(this.TriggerSoftwareLoad);
             // 
-            // circleButtonAddSoftware
-            // 
-            this.circleButtonAddSoftware.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.circleButtonAddSoftware.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.circleButtonAddSoftware.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circleButtonAddSoftware.BackgroundImage")));
-            this.circleButtonAddSoftware.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.circleButtonAddSoftware.FlatAppearance.BorderSize = 0;
-            this.circleButtonAddSoftware.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleButtonAddSoftware.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.circleButtonAddSoftware.ForeColor = System.Drawing.Color.White;
-            this.circleButtonAddSoftware.Location = new System.Drawing.Point(7, 579);
-            this.circleButtonAddSoftware.Name = "circleButtonAddSoftware";
-            this.circleButtonAddSoftware.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.circleButtonAddSoftware.Size = new System.Drawing.Size(60, 60);
-            this.circleButtonAddSoftware.TabIndex = 15;
-            this.circleButtonAddSoftware.UseVisualStyleBackColor = false;
-            this.circleButtonAddSoftware.Click += new System.EventHandler(this.circleButtonAddSoftware_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -519,7 +519,7 @@ namespace Software_Accounting.Forms
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.groupBoxInfo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,7 +528,7 @@ namespace Software_Accounting.Forms
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox listBoxSoftware;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxInfo;
         private System.Windows.Forms.Label labelEmployeeFullname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

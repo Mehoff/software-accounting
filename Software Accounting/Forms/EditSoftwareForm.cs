@@ -35,8 +35,12 @@ namespace Software_Accounting.Forms
         private void circularButtonSaveChanges_Click(object sender, EventArgs e)
         {
             var Name = textBoxSoftwareName.Text.Trim();
-            var ProjectId = ((ComboBoxItem)comboBoxProjects.SelectedItem).Value;
-            var ProgressStatus = ((ComboBoxItem)comboBoxProgressStatus.SelectedItem).Value;
+            int? ProjectId = ((ComboBoxItem)comboBoxProjects.Items[comboBoxProjects.SelectedIndex]).Value;
+
+            if (ProjectId == -2)
+                ProjectId = null;
+
+            var ProgressStatus = ((ComboBoxItem)comboBoxProgressStatus.Items[comboBoxProgressStatus.SelectedIndex]).Value;
             var URL = textBoxURL.Text.Trim();
 
             var data = new Software { Name = Name, ProjectFk = ProjectId, ProgressStatusFk = ProgressStatus, SourceUrl = URL };
@@ -97,7 +101,6 @@ namespace Software_Accounting.Forms
                 comboBoxProjects.DisplayMember = "Name";
                 comboBoxProjects.ValueMember = "Value";
 
-                comboBoxProjects.Items.Add(new ComboBoxItem { Value = -1, Name = "Любой" });
                 comboBoxProjects.Items.Add(new ComboBoxItem { Value = -2, Name = "Без проекта" });
 
                 var Projects = ctx.Projects.ToList();
@@ -110,13 +113,11 @@ namespace Software_Accounting.Forms
                 comboBoxProgressStatus.DisplayMember = "Name";
                 comboBoxProgressStatus.ValueMember = "Value";
 
-                comboBoxProgressStatus.Items.Add(new ComboBoxItem { Value = -1, Name = "Любой" });
 
                 var ProgressStatuses = ctx.ProgressStatuses.ToList();
 
                 foreach (var status in ProgressStatuses)
                     comboBoxProgressStatus.Items.Add(new ComboBoxItem { Value = status.Id, Name = status.Name });
-
 
             }
         }

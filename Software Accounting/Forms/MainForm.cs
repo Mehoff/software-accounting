@@ -32,9 +32,6 @@ namespace Software_Accounting.Forms
             LoadComboBoxes();
         }
 
-
-
-        // Пока не работает
         private void TriggerSoftwareLoad(object sender, EventArgs e) 
         {
             listBoxSoftware.DataSource = null;
@@ -42,17 +39,12 @@ namespace Software_Accounting.Forms
             using (var ctx = new DBContext()) 
             {
                 var Software = ctx.Softwares.ToList();
-
-
                 var FullName = textBoxFullname.Text.Trim();
                 var SoftwareName = textBoxSoftwareName.Text.Trim();
-
 
                 // TODO: Добавить в комбобокс вариант "Без проекта" и обработку этого варианта в этой функции
                 if (FullName.Length > 0) 
                 {
-                    //BUG Author is null
-
                     var temp = new List<Software>();
                     foreach(var soft in Software) 
                     {
@@ -120,9 +112,13 @@ namespace Software_Accounting.Forms
 
         private void listBoxSoftware_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxSoftware.SelectedIndex == -1)
+            if (listBoxSoftware.SelectedIndex == -1) 
+            {
+                groupBoxInfo.Visible = false;
                 return;
-         
+            }
+            else groupBoxInfo.Visible = true;
+
             using (var ctx = new DBContext()) 
             {
                 Software software = ctx.Softwares.SingleOrDefault(s => s.Id == (listBoxSoftware.SelectedItem as Software).Id);
@@ -170,14 +166,37 @@ namespace Software_Accounting.Forms
         {
             var profileForm = new ProfileForm(CurrentUser.Instance.Employee.Id);
             profileForm.ShowDialog();
+
+            listBoxSoftware_SelectedIndexChanged(null, null);
         }
 
         private void circleButtonAddSoftware_Click(object sender, EventArgs e)
         {
             var addSoftwareForm = new AddSoftwareForm();
             addSoftwareForm.ShowDialog();
+
+            TriggerSoftwareLoad(null, null);
         }
 
+        private void labelEmployeeFullname_Click(object sender, EventArgs e)
+        {
+            var ProfileForm = new ProfileForm((int)labelEmployeeFullname.Tag);
+            ProfileForm.ShowDialog();
+
+            listBoxSoftware_SelectedIndexChanged(null, null);
+        }
+
+        private void circleButtonEditSoftware_Click(object sender, EventArgs e)
+        {
+            var SoftwareId = (listBoxSoftware.SelectedItem as Software).Id;
+            var form = new EditSoftwareForm(SoftwareId);
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+
+            //Trigger UI Update
+            listBoxSoftware_SelectedIndexChanged(null, null);
+        }
 
         private void LoadComboBoxes()
         {
@@ -247,21 +266,7 @@ namespace Software_Accounting.Forms
             }
         }
 
-        private void labelEmployeeFullname_Click(object sender, EventArgs e)
-        {
-            var ProfileForm = new ProfileForm((int)labelEmployeeFullname.Tag);
-            ProfileForm.ShowDialog();
-        }
 
-        private void circleButtonEditSoftware_Click(object sender, EventArgs e)
-        {
-            var SoftwareId = (listBoxSoftware.SelectedItem as Software).Id;
-            var form = new EditSoftwareForm(SoftwareId);
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
 
-            //TODO: Update visual data
-        }
     }
 }
