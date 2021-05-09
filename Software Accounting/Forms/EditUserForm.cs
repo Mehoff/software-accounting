@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Software_Accounting.Source;
 
 namespace Software_Accounting.Forms
 {
@@ -32,6 +33,13 @@ namespace Software_Accounting.Forms
                     MessageBox.Show("Ошибка загрузки данных сотрудника");
                     return;
                 }
+
+                if(CurrentUser.Instance.Employee.UserTypeFk != 1) 
+                {
+                    comboBoxPositions.Enabled = false;
+                    comboBoxUserTypes.Enabled = false;
+                }
+
             }
             FillData();
         }

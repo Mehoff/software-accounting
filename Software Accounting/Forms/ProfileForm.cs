@@ -30,9 +30,11 @@ namespace Software_Accounting.Forms
                 if (Employee == null)
                     return;
 
-                if(Employee.Id == CurrentUser.Instance.Employee.Id || CurrentUser.Instance.Employee.UserTypeFk == 1) 
+                if(Employee.Id == CurrentUser.Instance.Employee.Id || CurrentUser.Instance.Employee.UserTypeFk == 1)
                     circleButtonEditProfile.Visible = true;
                 else  circleButtonEditProfile.Visible = false; 
+
+
 
                 // Softwares
                 listBoxSoftware.DisplayMember = "Name";
@@ -81,7 +83,7 @@ namespace Software_Accounting.Forms
 
         private void circularButtonDownload_Click(object sender, EventArgs e)
         {
-            // TODO...
+            UriOpener.OpenUri(((Software)listBoxSoftware.SelectedItem).SourceUrl);
         }
 
         private void circleButtonEditProfile_Click(object sender, EventArgs e)

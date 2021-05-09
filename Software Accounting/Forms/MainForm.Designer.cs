@@ -199,6 +199,7 @@ namespace Software_Accounting.Forms
             this.buttonDownload.TabIndex = 12;
             this.buttonDownload.Text = "Скачать";
             this.buttonDownload.UseVisualStyleBackColor = false;
+            this.buttonDownload.Click += new System.EventHandler(this.buttonDownload_Click);
             // 
             // circleButtonEditSoftware
             // 

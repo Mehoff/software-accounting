@@ -9,6 +9,7 @@ using System.Linq;
 using Software_Accounting.Context;
 using Software_Accounting.Models;
 using Software_Accounting.Source;
+using System.Diagnostics;
 
 namespace Software_Accounting.Forms
 {
@@ -17,7 +18,6 @@ namespace Software_Accounting.Forms
         public int Value { get; set; }
         public string Name { get; set; }
     }
-
     public partial class MainForm : Form
     {
         private bool mouseDown;
@@ -108,7 +108,6 @@ namespace Software_Accounting.Forms
                 listBoxSoftware.ValueMember = "Id";
             }
         }
-
 
         private void listBoxSoftware_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -228,7 +227,6 @@ namespace Software_Accounting.Forms
             }
         }
 
-
         // Opens Administrator Panel
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -266,7 +264,9 @@ namespace Software_Accounting.Forms
             }
         }
 
-
-
+        private void buttonDownload_Click(object sender, EventArgs e)
+        {
+            UriOpener.OpenUri((listBoxSoftware.SelectedItem as Software).SourceUrl);
+        }
     }
 }

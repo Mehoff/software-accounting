@@ -30,6 +30,7 @@ namespace Software_Accounting.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.circleButtonEditProfile = new Software_Accounting.Resources.Classes.CircleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace Software_Accounting.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listBoxSoftware = new System.Windows.Forms.ListBox();
-            this.circleButtonEditProfile = new Software_Accounting.Resources.Classes.CircleButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,6 +69,25 @@ namespace Software_Accounting.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(362, 655);
             this.panel1.TabIndex = 0;
+            // 
+            // circleButtonEditProfile
+            // 
+            this.circleButtonEditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.circleButtonEditProfile.BackColor = System.Drawing.Color.Lime;
+            this.circleButtonEditProfile.BackgroundImage = global::Software_Accounting.Properties.Resources.edit;
+            this.circleButtonEditProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.circleButtonEditProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.circleButtonEditProfile.FlatAppearance.BorderSize = 0;
+            this.circleButtonEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButtonEditProfile.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButtonEditProfile.ForeColor = System.Drawing.Color.White;
+            this.circleButtonEditProfile.Location = new System.Drawing.Point(12, 584);
+            this.circleButtonEditProfile.Name = "circleButtonEditProfile";
+            this.circleButtonEditProfile.Size = new System.Drawing.Size(50, 50);
+            this.circleButtonEditProfile.TabIndex = 16;
+            this.circleButtonEditProfile.UseVisualStyleBackColor = false;
+            this.circleButtonEditProfile.Visible = false;
+            this.circleButtonEditProfile.Click += new System.EventHandler(this.circleButtonEditProfile_Click);
             // 
             // label1
             // 
@@ -225,9 +244,9 @@ namespace Software_Accounting.Forms
             this.circularButtonDownload.Enabled = false;
             this.circularButtonDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.circularButtonDownload.ForeColor = System.Drawing.Color.White;
-            this.circularButtonDownload.Location = new System.Drawing.Point(40, 374);
+            this.circularButtonDownload.Location = new System.Drawing.Point(18, 374);
             this.circularButtonDownload.Name = "circularButtonDownload";
-            this.circularButtonDownload.Size = new System.Drawing.Size(266, 45);
+            this.circularButtonDownload.Size = new System.Drawing.Size(309, 45);
             this.circularButtonDownload.TabIndex = 4;
             this.circularButtonDownload.Text = "Скачать";
             this.circularButtonDownload.UseVisualStyleBackColor = false;
@@ -358,25 +377,6 @@ namespace Software_Accounting.Forms
             this.listBoxSoftware.Size = new System.Drawing.Size(309, 319);
             this.listBoxSoftware.TabIndex = 0;
             this.listBoxSoftware.SelectedIndexChanged += new System.EventHandler(this.listBoxSoftware_SelectedIndexChanged);
-            // 
-            // circleButtonEditProfile
-            // 
-            this.circleButtonEditProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.circleButtonEditProfile.BackColor = System.Drawing.Color.Lime;
-            this.circleButtonEditProfile.BackgroundImage = global::Software_Accounting.Properties.Resources.edit;
-            this.circleButtonEditProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.circleButtonEditProfile.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.circleButtonEditProfile.FlatAppearance.BorderSize = 0;
-            this.circleButtonEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleButtonEditProfile.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.circleButtonEditProfile.ForeColor = System.Drawing.Color.White;
-            this.circleButtonEditProfile.Location = new System.Drawing.Point(12, 584);
-            this.circleButtonEditProfile.Name = "circleButtonEditProfile";
-            this.circleButtonEditProfile.Size = new System.Drawing.Size(50, 50);
-            this.circleButtonEditProfile.TabIndex = 16;
-            this.circleButtonEditProfile.UseVisualStyleBackColor = false;
-            this.circleButtonEditProfile.Visible = false;
-            this.circleButtonEditProfile.Click += new System.EventHandler(this.circleButtonEditProfile_Click);
             // 
             // ProfileForm
             // 
