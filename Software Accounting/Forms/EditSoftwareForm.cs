@@ -77,6 +77,10 @@ namespace Software_Accounting.Forms
                 Software.ProgressStatusFk = data.ProgressStatusFk;
                 Software.SourceUrl = data.SourceUrl;
 
+                if (Software.ProgressStatusFk == 3)
+                    Software.LastUpdateDateTime = DateTime.Now;
+                else Software.LastUpdateDateTime = null;
+
                 ctx.SaveChanges();
             }
 

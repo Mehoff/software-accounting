@@ -228,7 +228,7 @@ namespace Software_Accounting.Forms
             this.labelProgressStatus.Name = "labelProgressStatus";
             this.labelProgressStatus.Size = new System.Drawing.Size(435, 27);
             this.labelProgressStatus.TabIndex = 1;
-            this.labelProgressStatus.Text = "FinishDate";
+            this.labelProgressStatus.Text = " ";
             this.labelProgressStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelFinishDate
@@ -239,7 +239,6 @@ namespace Software_Accounting.Forms
             this.labelFinishDate.Name = "labelFinishDate";
             this.labelFinishDate.Size = new System.Drawing.Size(426, 27);
             this.labelFinishDate.TabIndex = 1;
-            this.labelFinishDate.Text = "FinishDate";
             this.labelFinishDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -262,7 +261,6 @@ namespace Software_Accounting.Forms
             this.labelStartDate.Name = "labelStartDate";
             this.labelStartDate.Size = new System.Drawing.Size(426, 27);
             this.labelStartDate.TabIndex = 1;
-            this.labelStartDate.Text = "StartDate";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -285,7 +283,6 @@ namespace Software_Accounting.Forms
             this.labelSoftwareName.Name = "labelSoftwareName";
             this.labelSoftwareName.Size = new System.Drawing.Size(426, 27);
             this.labelSoftwareName.TabIndex = 1;
-            this.labelSoftwareName.Text = "SoftwareName";
             this.labelSoftwareName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelProjectName
@@ -296,7 +293,6 @@ namespace Software_Accounting.Forms
             this.labelProjectName.Name = "labelProjectName";
             this.labelProjectName.Size = new System.Drawing.Size(426, 27);
             this.labelProjectName.TabIndex = 1;
-            this.labelProjectName.Text = "ProjectName";
             this.labelProjectName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -333,7 +329,6 @@ namespace Software_Accounting.Forms
             this.labelEmployeeFullname.Name = "labelEmployeeFullname";
             this.labelEmployeeFullname.Size = new System.Drawing.Size(426, 27);
             this.labelEmployeeFullname.TabIndex = 1;
-            this.labelEmployeeFullname.Text = "EmployeeFullname";
             this.labelEmployeeFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelEmployeeFullname.Click += new System.EventHandler(this.labelEmployeeFullname_Click);
             // 
