@@ -32,20 +32,22 @@ namespace Software_Accounting.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxPositions = new System.Windows.Forms.ComboBox();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBoxUserTypes = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxMail = new System.Windows.Forms.TextBox();
             this.circleButtonRestore = new Software_Accounting.Resources.Classes.CircleButton();
             this.circularButtonSaveChanges = new Software_Accounting.Resources.Classes.CircularButton();
+            this.comboBoxUserTypes = new System.Windows.Forms.ComboBox();
+            this.comboBoxPositions = new System.Windows.Forms.ComboBox();
+            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.panelEditUserDrag = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,89 +89,45 @@ namespace Software_Accounting.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(361, 12);
+            this.groupBox1.Location = new System.Drawing.Point(361, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(560, 587);
+            this.groupBox1.Size = new System.Drawing.Size(560, 509);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Редактирование данных пользователя";
             // 
-            // comboBoxPositions
+            // circleButtonRestore
             // 
-            this.comboBoxPositions.BackColor = System.Drawing.Color.White;
-            this.comboBoxPositions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPositions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxPositions.FormattingEnabled = true;
-            this.comboBoxPositions.Location = new System.Drawing.Point(60, 290);
-            this.comboBoxPositions.Name = "comboBoxPositions";
-            this.comboBoxPositions.Size = new System.Drawing.Size(435, 29);
-            this.comboBoxPositions.TabIndex = 29;
+            this.circleButtonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.circleButtonRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.circleButtonRestore.BackgroundImage = global::Software_Accounting.Properties.Resources.revert;
+            this.circleButtonRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.circleButtonRestore.FlatAppearance.BorderSize = 0;
+            this.circleButtonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circleButtonRestore.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.circleButtonRestore.ForeColor = System.Drawing.Color.White;
+            this.circleButtonRestore.Location = new System.Drawing.Point(60, 430);
+            this.circleButtonRestore.Name = "circleButtonRestore";
+            this.circleButtonRestore.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.circleButtonRestore.Size = new System.Drawing.Size(60, 60);
+            this.circleButtonRestore.TabIndex = 31;
+            this.circleButtonRestore.UseVisualStyleBackColor = false;
+            this.circleButtonRestore.Click += new System.EventHandler(this.circleButtonRestore_Click);
             // 
-            // textBoxName
+            // circularButtonSaveChanges
             // 
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxName.Location = new System.Drawing.Point(60, 107);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PlaceholderText = "ФИО";
-            this.textBoxName.Size = new System.Drawing.Size(435, 22);
-            this.textBoxName.TabIndex = 28;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel3.Location = new System.Drawing.Point(60, 125);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(435, 5);
-            this.panel3.TabIndex = 26;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel2.Location = new System.Drawing.Point(60, 317);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(435, 3);
-            this.panel2.TabIndex = 27;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(60, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(435, 27);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "ФИО";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Location = new System.Drawing.Point(60, 260);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(435, 27);
-            this.label9.TabIndex = 25;
-            this.label9.Text = "Должность";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(60, 331);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(435, 27);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Тип учетной записи";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel4.Location = new System.Drawing.Point(60, 388);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(435, 3);
-            this.panel4.TabIndex = 27;
+            this.circularButtonSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.circularButtonSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.circularButtonSaveChanges.FlatAppearance.BorderSize = 0;
+            this.circularButtonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.circularButtonSaveChanges.ForeColor = System.Drawing.Color.White;
+            this.circularButtonSaveChanges.Location = new System.Drawing.Point(287, 434);
+            this.circularButtonSaveChanges.Name = "circularButtonSaveChanges";
+            this.circularButtonSaveChanges.Size = new System.Drawing.Size(208, 49);
+            this.circularButtonSaveChanges.TabIndex = 30;
+            this.circularButtonSaveChanges.Text = "Сохранить изменения";
+            this.circularButtonSaveChanges.UseVisualStyleBackColor = false;
+            this.circularButtonSaveChanges.Click += new System.EventHandler(this.circularButtonSaveChanges_Click);
             // 
             // comboBoxUserTypes
             // 
@@ -182,6 +140,67 @@ namespace Software_Accounting.Forms
             this.comboBoxUserTypes.Size = new System.Drawing.Size(435, 29);
             this.comboBoxUserTypes.TabIndex = 29;
             // 
+            // comboBoxPositions
+            // 
+            this.comboBoxPositions.BackColor = System.Drawing.Color.White;
+            this.comboBoxPositions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPositions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxPositions.FormattingEnabled = true;
+            this.comboBoxPositions.Location = new System.Drawing.Point(60, 290);
+            this.comboBoxPositions.Name = "comboBoxPositions";
+            this.comboBoxPositions.Size = new System.Drawing.Size(435, 29);
+            this.comboBoxPositions.TabIndex = 29;
+            // 
+            // textBoxMail
+            // 
+            this.textBoxMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMail.Location = new System.Drawing.Point(60, 193);
+            this.textBoxMail.Name = "textBoxMail";
+            this.textBoxMail.PlaceholderText = "mail@gmail.com";
+            this.textBoxMail.Size = new System.Drawing.Size(435, 22);
+            this.textBoxMail.TabIndex = 28;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxName.Location = new System.Drawing.Point(60, 107);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PlaceholderText = "ФИО";
+            this.textBoxName.Size = new System.Drawing.Size(435, 22);
+            this.textBoxName.TabIndex = 28;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel5.Location = new System.Drawing.Point(60, 211);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(435, 5);
+            this.panel5.TabIndex = 26;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel3.Location = new System.Drawing.Point(60, 125);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(435, 5);
+            this.panel3.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel4.Location = new System.Drawing.Point(60, 388);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(435, 3);
+            this.panel4.TabIndex = 27;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel2.Location = new System.Drawing.Point(60, 317);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(435, 3);
+            this.panel2.TabIndex = 27;
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -193,63 +212,78 @@ namespace Software_Accounting.Forms
             this.label4.Text = "Почта";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel5
+            // label2
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel5.Location = new System.Drawing.Point(60, 211);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(435, 5);
-            this.panel5.TabIndex = 26;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Location = new System.Drawing.Point(60, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(435, 27);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "ФИО";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxMail
+            // label3
             // 
-            this.textBoxMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMail.Location = new System.Drawing.Point(60, 193);
-            this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.PlaceholderText = "mail@gmail.com";
-            this.textBoxMail.Size = new System.Drawing.Size(435, 22);
-            this.textBoxMail.TabIndex = 28;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Location = new System.Drawing.Point(60, 331);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(435, 27);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Тип учетной записи";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circleButtonRestore
+            // label9
             // 
-            this.circleButtonRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.circleButtonRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.circleButtonRestore.BackgroundImage = global::Software_Accounting.Properties.Resources.revert;
-            this.circleButtonRestore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.circleButtonRestore.FlatAppearance.BorderSize = 0;
-            this.circleButtonRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circleButtonRestore.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.circleButtonRestore.ForeColor = System.Drawing.Color.White;
-            this.circleButtonRestore.Location = new System.Drawing.Point(60, 517);
-            this.circleButtonRestore.Name = "circleButtonRestore";
-            this.circleButtonRestore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.circleButtonRestore.Size = new System.Drawing.Size(60, 60);
-            this.circleButtonRestore.TabIndex = 31;
-            this.circleButtonRestore.UseVisualStyleBackColor = false;
-            this.circleButtonRestore.Click += new System.EventHandler(this.circleButtonRestore_Click);
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Location = new System.Drawing.Point(60, 260);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(435, 27);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Должность";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // circularButtonSaveChanges
+            // buttonExit
             // 
-            this.circularButtonSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.circularButtonSaveChanges.FlatAppearance.BorderSize = 0;
-            this.circularButtonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.circularButtonSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.circularButtonSaveChanges.Location = new System.Drawing.Point(287, 521);
-            this.circularButtonSaveChanges.Name = "circularButtonSaveChanges";
-            this.circularButtonSaveChanges.Size = new System.Drawing.Size(208, 49);
-            this.circularButtonSaveChanges.TabIndex = 30;
-            this.circularButtonSaveChanges.Text = "Сохранить изменения";
-            this.circularButtonSaveChanges.UseVisualStyleBackColor = false;
-            this.circularButtonSaveChanges.Click += new System.EventHandler(this.circularButtonSaveChanges_Click);
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Location = new System.Drawing.Point(893, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(41, 29);
+            this.buttonExit.TabIndex = 13;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // panelEditUserDrag
+            // 
+            this.panelEditUserDrag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelEditUserDrag.Location = new System.Drawing.Point(0, 0);
+            this.panelEditUserDrag.Name = "panelEditUserDrag";
+            this.panelEditUserDrag.Size = new System.Drawing.Size(895, 29);
+            this.panelEditUserDrag.TabIndex = 14;
+            this.panelEditUserDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelEditUserDrag_MouseDown);
+            this.panelEditUserDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelEditUserDrag_MouseMove);
+            this.panelEditUserDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelEditUserDrag_MouseUp);
             // 
             // EditUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 603);
+            this.ClientSize = new System.Drawing.Size(933, 610);
+            this.Controls.Add(this.panelEditUserDrag);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditUserForm";
@@ -281,5 +315,7 @@ namespace Software_Accounting.Forms
         private Resources.Classes.CircleButton circleButtonRestore;
         private Resources.Classes.CircularButton circularButtonSaveChanges;
         private System.Windows.Forms.ComboBox comboBoxUserTypes;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Panel panelEditUserDrag;
     }
 }

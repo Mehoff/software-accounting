@@ -14,6 +14,9 @@ namespace Software_Accounting.Forms
 {
     public partial class ProfileForm : Form
     {
+        private bool mouseDown;
+
+        private Point lastLocation;
         private int EmployeeId { get; set; }
         private Employee Employee { get; set; }
         public ProfileForm(int id)
@@ -92,6 +95,33 @@ namespace Software_Accounting.Forms
             form.ShowDialog();
 
             ProfileForm_Load(null, null);
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panelDraggable_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panelDraggable_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void panelDraggable_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
         }
     }
 }

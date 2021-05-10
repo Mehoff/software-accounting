@@ -9,11 +9,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Software_Accounting.Source;
+using System.Net.Mail;
 
 namespace Software_Accounting.Forms
 {
     public partial class EditUserForm : Form
     {
+        private bool mouseDown;
+        private Point lastLocation;
         private Employee Employee { get; set; }
         private int EmployeeId { get; set; }
         public EditUserForm(int id)
@@ -95,6 +98,22 @@ namespace Software_Accounting.Forms
                 PositionFk = (comboBoxPositions.Items[comboBoxPositions.SelectedIndex] as Position).Id
             };
 
+            if(data.Fullname.Length < 2) 
+            {
+                MessageBox.Show("Имя должно состоять более чем из двух символов");
+                return;
+            }
+
+            try 
+            {
+                data.Email = new MailAddress(data.Email).Address;
+            }
+            catch (FormatException fe) 
+            {
+                MessageBox.Show("Некорректный Email");
+                return;
+            }
+
             if (isEqual(Employee, data)) 
             {
                 MessageBox.Show("Нет изменений");
@@ -107,6 +126,12 @@ namespace Software_Accounting.Forms
                 if(Employee == null) 
                 {
                     MessageBox.Show("Ошибка загрузки пользователя");
+                    return;
+                }
+
+                if(ctx.Employees.SingleOrDefault(e => e.Email == data.Email) != null) 
+                {
+                    MessageBox.Show("Пользователь с такой почтой уже существует в системе");
                     return;
                 }
 
@@ -134,6 +159,32 @@ namespace Software_Accounting.Forms
         private void circleButtonRestore_Click(object sender, EventArgs e)
         {
             FillData();
+        }
+
+        private void panelEditUserDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panelEditUserDrag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panelEditUserDrag_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

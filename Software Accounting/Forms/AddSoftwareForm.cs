@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Software_Accounting.Source;
+using System.Text.RegularExpressions;
 
 namespace Software_Accounting.Forms
 {
@@ -22,7 +23,9 @@ namespace Software_Accounting.Forms
 
     public partial class AddSoftwareForm : Form
     {
+        private bool mouseDown;
 
+        private Point lastLocation;
         public AddSoftwareForm()
         {
             InitializeComponent();
@@ -73,11 +76,13 @@ namespace Software_Accounting.Forms
             {
                 labelNewProjectName.Visible = true;
                 textBoxNewProjectName.Visible = true;
+                panelNewProject.Visible = true;
             }
             else 
             {
                 labelNewProjectName.Visible = false;
                 textBoxNewProjectName.Visible = false;
+                panelNewProject.Visible = false;
             }
         }
 
@@ -89,6 +94,21 @@ namespace Software_Accounting.Forms
 
             int? newProjectId = null;
 
+            var newSoftwareName = textBoxName.Text.Trim();
+            var newSoftwareUrl = textBoxURL.Text.Trim();
+
+            if (newSoftwareName.Length < 2 || newSoftwareUrl.Length == 0)
+            {
+                MessageBox.Show("Не все поля заполнены корректно");
+                return;
+            }
+
+            if (!UriOpener.IsCorrectUri(newSoftwareUrl))
+            {
+                MessageBox.Show("Некорректная ссылка на ресурс скачивания");
+                return;
+            }
+
             try 
             {
                 using (var ctx = new DBContext())
@@ -99,12 +119,22 @@ namespace Software_Accounting.Forms
                     {
                         newProjectName = textBoxNewProjectName.Text.Trim();
 
+                        if(newProjectName.Length < 2) 
+                        {
+                            MessageBox.Show("Короткое название проекта");
+                            return;
+                        }
+
+                        if(ctx.Projects.SingleOrDefault(p => p.Name.ToLower() == newProjectName.ToLower()) != null) 
+                        {
+                            MessageBox.Show("Проект с таким названием уже существует! Попробуйте другое имя");
+                            return;
+                        }
+
                         Project newProject = new Project();
                         newProject.Name = newProjectName;
                         ctx.Projects.Add(newProject);
                         ctx.SaveChanges();
-
-                        MessageBox.Show("Сохранен " + newProjectName);
 
                         newProjectId = newProject.Id;
                     }
@@ -112,10 +142,6 @@ namespace Software_Accounting.Forms
 
                 using (var ctx = new DBContext())
                 {
-                    //Check for nulls
-                    var newSoftwareName = textBoxName.Text.Trim();
-                    var newSoftwareUrl = textBoxURL.Text.Trim();
-
                     int? newSoftwareProjectFK;
 
                     switch (((ComboBoxProjectItem)comboBoxProject.SelectedItem).Value) 
@@ -156,6 +182,36 @@ namespace Software_Accounting.Forms
             {
                 MessageBox.Show(ex.InnerException.Message);
             }
+            Close();
+        }
+
+        // Window
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panelAddSoftwareDrag_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void panelAddSoftwareDrag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void panelAddSoftwareDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
         }
     }
 }

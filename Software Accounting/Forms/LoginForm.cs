@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Software_Accounting.Source;
+using System.Net.Mail;
 
 namespace Software_Accounting
 {
@@ -33,13 +34,11 @@ namespace Software_Accounting
         {
             Application.Exit();
         }
-
         private void labelRegister_Click(object sender, EventArgs e)
         {
             isLoggingIn = !isLoggingIn;
             UpdateUI();
         }
-
         private void UpdateUI() 
         {
             switch (isLoggingIn)
@@ -78,15 +77,32 @@ namespace Software_Accounting
                     break;
             }
         }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try 
             {
                 using (var ctx = new DBContext())
                 {
-                    var email = textBoxMail.Text.Trim();
+                    // EMAIL VALIDATION
+                    string email = string.Empty;
+                    try 
+                    {
+                        email = new MailAddress(textBoxMail.Text.Trim()).Address;
+                    }
+                    catch(FormatException fe) 
+                    {
+                        MessageBox.Show("Email адрес невалидный");
+                        return;
+                    }
+
                     var password = textBoxPassword.Text.Trim();
+
+                    //PASSWORD VALIDATION
+                    if(password.Length < 6) 
+                    {
+                        MessageBox.Show("Пароль должен быть не меньше 6 символов");
+                        return;
+                    }
 
                     if (isLoggingIn)
                     //Log In
@@ -107,6 +123,12 @@ namespace Software_Accounting
                         var confirmation = textBoxConfirm.Text.Trim();
 
                         if (!password.Equals(confirmation)) { MessageBox.Show("Пароли не совпадают"); return; }
+
+                        if(ctx.Employees.SingleOrDefault(e => e.Email == email) != null) 
+                        {
+                            MessageBox.Show("Пользователь с этой почтой уже зарегистрирован");
+                            return;
+                        }
 
                         Employee newEmployee = new Employee
                         {
@@ -141,12 +163,10 @@ namespace Software_Accounting
             mouseDown = true;
             lastLocation = e.Location;
         }
-
         private void panelDragging_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-
         private void panelDragging_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)

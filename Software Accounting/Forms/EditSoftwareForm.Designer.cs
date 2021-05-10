@@ -45,6 +45,8 @@ namespace Software_Accounting.Forms
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxURL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.panelEditSoftwareDrag = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,10 +65,10 @@ namespace Software_Accounting.Forms
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-3, -4);
+            this.panel1.Location = new System.Drawing.Point(-3, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 572);
+            this.panel1.Size = new System.Drawing.Size(354, 568);
             this.panel1.TabIndex = 1;
             // 
             // comboBoxProgressStatus
@@ -75,7 +77,7 @@ namespace Software_Accounting.Forms
             this.comboBoxProgressStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProgressStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxProgressStatus.FormattingEnabled = true;
-            this.comboBoxProgressStatus.Location = new System.Drawing.Point(453, 237);
+            this.comboBoxProgressStatus.Location = new System.Drawing.Point(452, 269);
             this.comboBoxProgressStatus.Name = "comboBoxProgressStatus";
             this.comboBoxProgressStatus.Size = new System.Drawing.Size(435, 29);
             this.comboBoxProgressStatus.TabIndex = 22;
@@ -86,7 +88,7 @@ namespace Software_Accounting.Forms
             this.comboBoxProjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxProjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxProjects.FormattingEnabled = true;
-            this.comboBoxProjects.Location = new System.Drawing.Point(453, 163);
+            this.comboBoxProjects.Location = new System.Drawing.Point(452, 195);
             this.comboBoxProjects.Name = "comboBoxProjects";
             this.comboBoxProjects.Size = new System.Drawing.Size(435, 29);
             this.comboBoxProjects.TabIndex = 23;
@@ -94,7 +96,7 @@ namespace Software_Accounting.Forms
             // textBoxSoftwareName
             // 
             this.textBoxSoftwareName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSoftwareName.Location = new System.Drawing.Point(453, 84);
+            this.textBoxSoftwareName.Location = new System.Drawing.Point(452, 116);
             this.textBoxSoftwareName.Name = "textBoxSoftwareName";
             this.textBoxSoftwareName.PlaceholderText = "Название ПО";
             this.textBoxSoftwareName.Size = new System.Drawing.Size(435, 22);
@@ -103,7 +105,7 @@ namespace Software_Accounting.Forms
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel4.Location = new System.Drawing.Point(453, 264);
+            this.panel4.Location = new System.Drawing.Point(452, 296);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(435, 3);
             this.panel4.TabIndex = 16;
@@ -111,7 +113,7 @@ namespace Software_Accounting.Forms
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel3.Location = new System.Drawing.Point(453, 102);
+            this.panel3.Location = new System.Drawing.Point(452, 134);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(435, 5);
             this.panel3.TabIndex = 17;
@@ -119,7 +121,7 @@ namespace Software_Accounting.Forms
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel2.Location = new System.Drawing.Point(453, 190);
+            this.panel2.Location = new System.Drawing.Point(452, 222);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(435, 3);
             this.panel2.TabIndex = 18;
@@ -128,7 +130,7 @@ namespace Software_Accounting.Forms
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Location = new System.Drawing.Point(453, 208);
+            this.label8.Location = new System.Drawing.Point(452, 240);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(435, 27);
             this.label8.TabIndex = 14;
@@ -139,7 +141,7 @@ namespace Software_Accounting.Forms
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Location = new System.Drawing.Point(453, 133);
+            this.label9.Location = new System.Drawing.Point(452, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(435, 27);
             this.label9.TabIndex = 15;
@@ -182,7 +184,7 @@ namespace Software_Accounting.Forms
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Location = new System.Drawing.Point(453, 39);
+            this.label2.Location = new System.Drawing.Point(452, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(435, 27);
             this.label2.TabIndex = 15;
@@ -192,7 +194,7 @@ namespace Software_Accounting.Forms
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panel5.Location = new System.Drawing.Point(453, 354);
+            this.panel5.Location = new System.Drawing.Point(452, 386);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(435, 5);
             this.panel5.TabIndex = 17;
@@ -200,7 +202,7 @@ namespace Software_Accounting.Forms
             // textBoxURL
             // 
             this.textBoxURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxURL.Location = new System.Drawing.Point(453, 336);
+            this.textBoxURL.Location = new System.Drawing.Point(452, 368);
             this.textBoxURL.Name = "textBoxURL";
             this.textBoxURL.PlaceholderText = "https://github.com/author/repo";
             this.textBoxURL.Size = new System.Drawing.Size(435, 22);
@@ -210,18 +212,48 @@ namespace Software_Accounting.Forms
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Location = new System.Drawing.Point(453, 288);
+            this.label3.Location = new System.Drawing.Point(452, 320);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(435, 27);
             this.label3.TabIndex = 14;
             this.label3.Text = "URL:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // buttonExit
+            // 
+            this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.ForeColor = System.Drawing.Color.White;
+            this.buttonExit.Location = new System.Drawing.Point(954, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(35, 29);
+            this.buttonExit.TabIndex = 26;
+            this.buttonExit.Text = "X";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // panelEditSoftwareDrag
+            // 
+            this.panelEditSoftwareDrag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panelEditSoftwareDrag.Location = new System.Drawing.Point(-3, 0);
+            this.panelEditSoftwareDrag.Name = "panelEditSoftwareDrag";
+            this.panelEditSoftwareDrag.Size = new System.Drawing.Size(961, 29);
+            this.panelEditSoftwareDrag.TabIndex = 27;
+            this.panelEditSoftwareDrag.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelEditSoftwareDrag_MouseDown);
+            this.panelEditSoftwareDrag.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelEditSoftwareDrag_MouseMove);
+            this.panelEditSoftwareDrag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelEditSoftwareDrag_MouseUp);
+            // 
             // EditSoftwareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 560);
+            this.Controls.Add(this.panelEditSoftwareDrag);
+            this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.circleButtonRestore);
             this.Controls.Add(this.circularButtonSaveChanges);
             this.Controls.Add(this.comboBoxProgressStatus);
@@ -238,6 +270,7 @@ namespace Software_Accounting.Forms
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditSoftwareForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditSoftwareForm";
@@ -266,5 +299,7 @@ namespace Software_Accounting.Forms
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBoxURL;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Panel panelEditSoftwareDrag;
     }
 }

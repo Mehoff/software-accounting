@@ -67,12 +67,12 @@ namespace Software_Accounting
             this.panel1.Controls.Add(this.panelEmail);
             this.panel1.Location = new System.Drawing.Point(353, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 557);
+            this.panel1.Size = new System.Drawing.Size(545, 558);
             this.panel1.TabIndex = 0;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.buttonLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -105,7 +105,7 @@ namespace Software_Accounting
             this.labelRegister.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labelRegister.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
             this.labelRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
-            this.labelRegister.Location = new System.Drawing.Point(0, 499);
+            this.labelRegister.Location = new System.Drawing.Point(0, 500);
             this.labelRegister.Name = "labelRegister";
             this.labelRegister.Size = new System.Drawing.Size(545, 58);
             this.labelRegister.TabIndex = 6;
@@ -132,16 +132,17 @@ namespace Software_Accounting
             // textBoxFullname
             // 
             this.textBoxFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFullname.Location = new System.Drawing.Point(40, 173);
+            this.textBoxFullname.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxFullname.Location = new System.Drawing.Point(40, 170);
             this.textBoxFullname.Name = "textBoxFullname";
             this.textBoxFullname.PlaceholderText = "ФИО";
-            this.textBoxFullname.Size = new System.Drawing.Size(457, 16);
+            this.textBoxFullname.Size = new System.Drawing.Size(457, 22);
             this.textBoxFullname.TabIndex = 1;
             // 
             // panelFullname
             // 
             this.panelFullname.BackColor = System.Drawing.Color.Aqua;
-            this.panelFullname.Location = new System.Drawing.Point(40, 191);
+            this.panelFullname.Location = new System.Drawing.Point(40, 198);
             this.panelFullname.Name = "panelFullname";
             this.panelFullname.Size = new System.Drawing.Size(457, 1);
             this.panelFullname.TabIndex = 0;
@@ -149,16 +150,18 @@ namespace Software_Accounting
             // textBoxConfirm
             // 
             this.textBoxConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxConfirm.Location = new System.Drawing.Point(40, 328);
+            this.textBoxConfirm.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxConfirm.Location = new System.Drawing.Point(40, 324);
             this.textBoxConfirm.Name = "textBoxConfirm";
+            this.textBoxConfirm.PasswordChar = '•';
             this.textBoxConfirm.PlaceholderText = "Подтвердите пароль";
-            this.textBoxConfirm.Size = new System.Drawing.Size(457, 16);
+            this.textBoxConfirm.Size = new System.Drawing.Size(457, 22);
             this.textBoxConfirm.TabIndex = 4;
             // 
             // panelConfirm
             // 
             this.panelConfirm.BackColor = System.Drawing.Color.Aqua;
-            this.panelConfirm.Location = new System.Drawing.Point(40, 346);
+            this.panelConfirm.Location = new System.Drawing.Point(40, 352);
             this.panelConfirm.Name = "panelConfirm";
             this.panelConfirm.Size = new System.Drawing.Size(457, 1);
             this.panelConfirm.TabIndex = 0;
@@ -166,17 +169,19 @@ namespace Software_Accounting
             // textBoxPassword
             // 
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPassword.Location = new System.Drawing.Point(40, 280);
+            this.textBoxPassword.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.Location = new System.Drawing.Point(40, 275);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.PlaceholderText = "Пароль";
-            this.textBoxPassword.Size = new System.Drawing.Size(457, 16);
+            this.textBoxPassword.Size = new System.Drawing.Size(457, 22);
             this.textBoxPassword.TabIndex = 3;
-            this.textBoxPassword.Text = "admin";
+            this.textBoxPassword.Text = "qwerty";
             // 
             // panelPassword
             // 
             this.panelPassword.BackColor = System.Drawing.Color.Aqua;
-            this.panelPassword.Location = new System.Drawing.Point(40, 298);
+            this.panelPassword.Location = new System.Drawing.Point(40, 303);
             this.panelPassword.Name = "panelPassword";
             this.panelPassword.Size = new System.Drawing.Size(457, 1);
             this.panelPassword.TabIndex = 0;
@@ -184,17 +189,18 @@ namespace Software_Accounting
             // textBoxMail
             // 
             this.textBoxMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMail.Location = new System.Drawing.Point(40, 226);
+            this.textBoxMail.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBoxMail.Location = new System.Drawing.Point(40, 224);
             this.textBoxMail.Name = "textBoxMail";
             this.textBoxMail.PlaceholderText = "Почта";
-            this.textBoxMail.Size = new System.Drawing.Size(457, 16);
+            this.textBoxMail.Size = new System.Drawing.Size(457, 22);
             this.textBoxMail.TabIndex = 2;
             this.textBoxMail.Text = "admin@gmail.com";
             // 
             // panelEmail
             // 
             this.panelEmail.BackColor = System.Drawing.Color.Aqua;
-            this.panelEmail.Location = new System.Drawing.Point(40, 244);
+            this.panelEmail.Location = new System.Drawing.Point(40, 252);
             this.panelEmail.Name = "panelEmail";
             this.panelEmail.Size = new System.Drawing.Size(457, 1);
             this.panelEmail.TabIndex = 0;

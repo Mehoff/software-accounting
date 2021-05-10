@@ -30,6 +30,7 @@ namespace Software_Accounting.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadComboBoxes();
+            groupBoxInfo.Enabled = false;
         }
 
         private void TriggerSoftwareLoad(object sender, EventArgs e) 
@@ -113,10 +114,10 @@ namespace Software_Accounting.Forms
         {
             if (listBoxSoftware.SelectedIndex == -1) 
             {
-                groupBoxInfo.Visible = false;
+                groupBoxInfo.Enabled = false;
                 return;
             }
-            else groupBoxInfo.Visible = true;
+            else groupBoxInfo.Enabled = true;
 
             using (var ctx = new DBContext()) 
             {
@@ -165,8 +166,6 @@ namespace Software_Accounting.Forms
         {
             var profileForm = new ProfileForm(CurrentUser.Instance.Employee.Id);
             profileForm.ShowDialog();
-
-            listBoxSoftware_SelectedIndexChanged(null, null);
         }
 
         private void circleButtonAddSoftware_Click(object sender, EventArgs e)

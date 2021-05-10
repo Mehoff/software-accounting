@@ -8,11 +8,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Software_Accounting.Source;
 
 namespace Software_Accounting.Forms
 {
     public partial class EditSoftwareForm : Form
     {
+        private bool mouseDown;
+
+        private Point lastLocation;
         private Software Software { get; set; }
         private int SoftwareId { get; set; }
         public EditSoftwareForm(int id)
@@ -40,8 +44,21 @@ namespace Software_Accounting.Forms
             if (ProjectId == -2)
                 ProjectId = null;
 
+
+            if(Name.Length < 2) 
+            {
+                MessageBox.Show("Имя должно быть длиннее двух символов");
+                return;
+            }
+
             var ProgressStatus = ((ComboBoxItem)comboBoxProgressStatus.Items[comboBoxProgressStatus.SelectedIndex]).Value;
+            
             var URL = textBoxURL.Text.Trim();
+            if (!UriOpener.IsCorrectUri(URL)) 
+            {
+                MessageBox.Show("Некорректный URL");
+                return;
+            }
 
             var data = new Software { Name = Name, ProjectFk = ProjectId, ProgressStatusFk = ProgressStatus, SourceUrl = URL };
 
@@ -145,6 +162,33 @@ namespace Software_Accounting.Forms
             }
 
             textBoxURL.Text = Software.SourceUrl;
+        }
+
+        private void panelEditSoftwareDrag_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void panelEditSoftwareDrag_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDown = true;
+            lastLocation = e.Location;
+        }
+
+        private void panelEditSoftwareDrag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
