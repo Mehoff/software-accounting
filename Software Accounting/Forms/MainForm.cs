@@ -173,6 +173,7 @@ namespace Software_Accounting.Forms
             var addSoftwareForm = new AddSoftwareForm();
             addSoftwareForm.ShowDialog();
 
+            LoadComboBoxes();
             TriggerSoftwareLoad(null, null);
         }
 
